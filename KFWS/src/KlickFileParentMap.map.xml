@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data-map project-version="3.0">
+	<property name="defaultPackage" value="kf.config"/>
+	<property name="defaultSchema" value="kfweb_companies"/>
+	<property name="clientSupported" value="true"/>
+	<property name="defaultClientPackage" value="kf.config.client"/>
+	<db-entity name="companies" schema="kfweb_companies" catalog="kfweb_companies">
+		<db-attribute name="CompanyID" type="BIGINT" isPrimaryKey="true" isMandatory="true" length="10"/>
+		<db-attribute name="CompanyName" type="VARCHAR" isMandatory="true" length="200"/>
+		<db-attribute name="DBName" type="VARCHAR" isMandatory="true" length="200"/>
+		<db-attribute name="DBPassword" type="VARCHAR" isMandatory="true" length="50"/>
+		<db-attribute name="DBServer" type="VARCHAR" isMandatory="true" length="30"/>
+		<db-attribute name="DBUsername" type="VARCHAR" isMandatory="true" length="30"/>
+		<db-attribute name="KeyName" type="VARCHAR" isMandatory="true" length="200"/>
+		<db-attribute name="Licenses" type="INTEGER" length="10"/>
+		<db-attribute name="RegistrationKey" type="CHAR" isMandatory="true" length="34"/>
+	</db-entity>
+	<db-entity name="customerconfig" schema="kfweb_companies" catalog="kfweb_companies">
+		<db-attribute name="CustomerID" type="INTEGER" isMandatory="true" length="10"/>
+		<db-attribute name="CustomerName" type="VARCHAR" isMandatory="true" length="200"/>
+		<db-attribute name="DefaultAccessMethod" type="CHAR" length="6"/>
+		<db-attribute name="NetworkCache" type="VARCHAR" length="200"/>
+		<db-attribute name="ProjectRoot" type="VARCHAR" length="200"/>
+		<db-attribute name="RegistrationKey" type="CHAR" isMandatory="true" length="34"/>
+		<db-attribute name="SMTPPassword" type="VARCHAR" length="50"/>
+		<db-attribute name="SMTPServer" type="VARCHAR" length="100"/>
+		<db-attribute name="SMTPUsername" type="VARCHAR" length="50"/>
+		<db-attribute name="ServerIP" type="VARCHAR" length="50"/>
+		<db-attribute name="WebCacheFolder" type="VARCHAR" length="200"/>
+		<db-attribute name="WebCacheMethod" type="CHAR" length="5"/>
+		<db-attribute name="WebCachePassword" type="VARCHAR" length="200"/>
+		<db-attribute name="WebCachePath" type="VARCHAR" length="250"/>
+		<db-attribute name="WebCacheServer" type="VARCHAR" length="200"/>
+		<db-attribute name="WebCacheUsername" type="VARCHAR" length="200"/>
+		<db-attribute name="id" type="BIGINT" isPrimaryKey="true" isMandatory="true" length="10"/>
+	</db-entity>
+	<obj-entity name="Company" className="kf.config.Company" clientClassName="kf.config.client.Company" readOnly="true" dbEntityName="companies">
+		<obj-attribute name="companyId" type="java.lang.Long" db-attribute-path="CompanyID"/>
+		<obj-attribute name="companyName" type="java.lang.String" db-attribute-path="CompanyName"/>
+		<obj-attribute name="dBName" type="java.lang.String" db-attribute-path="DBName"/>
+		<obj-attribute name="dBPassword" type="java.lang.String" db-attribute-path="DBPassword"/>
+		<obj-attribute name="dBServer" type="java.lang.String" db-attribute-path="DBServer"/>
+		<obj-attribute name="dBUsername" type="java.lang.String" db-attribute-path="DBUsername"/>
+		<obj-attribute name="keyName" type="java.lang.String" db-attribute-path="KeyName"/>
+		<obj-attribute name="licenses" type="java.lang.Integer" db-attribute-path="Licenses"/>
+		<obj-attribute name="registrationKey" type="java.lang.String" db-attribute-path="RegistrationKey"/>
+	</obj-entity>
+	<obj-entity name="Customerconfig" className="kf.config.Customerconfig" clientClassName="kf.config.client.Customerconfig" readOnly="true" dbEntityName="customerconfig">
+		<obj-attribute name="customerID" type="java.lang.Integer" db-attribute-path="CustomerID"/>
+		<obj-attribute name="customerName" type="java.lang.String" db-attribute-path="CustomerName"/>
+		<obj-attribute name="defaultAccessMethod" type="java.lang.String" db-attribute-path="DefaultAccessMethod"/>
+		<obj-attribute name="id" type="java.lang.Long" db-attribute-path="id"/>
+		<obj-attribute name="networkCache" type="java.lang.String" db-attribute-path="NetworkCache"/>
+		<obj-attribute name="projectRoot" type="java.lang.String" db-attribute-path="ProjectRoot"/>
+		<obj-attribute name="registrationKey" type="java.lang.String" db-attribute-path="RegistrationKey"/>
+		<obj-attribute name="sMTPPassword" type="java.lang.String" db-attribute-path="SMTPPassword"/>
+		<obj-attribute name="sMTPServer" type="java.lang.String" db-attribute-path="SMTPServer"/>
+		<obj-attribute name="sMTPUsername" type="java.lang.String" db-attribute-path="SMTPUsername"/>
+		<obj-attribute name="serverIP" type="java.lang.String" db-attribute-path="ServerIP"/>
+		<obj-attribute name="webCacheFolder" type="java.lang.String" db-attribute-path="WebCacheFolder"/>
+		<obj-attribute name="webCacheMethod" type="java.lang.String" db-attribute-path="WebCacheMethod"/>
+		<obj-attribute name="webCachePassword" type="java.lang.String" db-attribute-path="WebCachePassword"/>
+		<obj-attribute name="webCachePath" type="java.lang.String" db-attribute-path="WebCachePath"/>
+		<obj-attribute name="webCacheServer" type="java.lang.String" db-attribute-path="WebCacheServer"/>
+		<obj-attribute name="webCacheUsername" type="java.lang.String" db-attribute-path="WebCacheUsername"/>
+	</obj-entity>
+</data-map>

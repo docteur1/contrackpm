@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context path="/contrack" override="true" debug="0">
+<!-- 
+	Use this to authenticate users against active directory
+	note that you must first set "user_class" to
+	"com.sinkluge.ldap.ActiveDirectoryUser" in the settings table
+	as well as set the appropriate ldap settings in that table.
+	All users must belong to the "Contrack Users" security group or
+	you must change the value in both settings and web.xml
+	<Realm className="org.apache.catalina.realm.JNDIRealm" debug="0"
+		connectionName="user@domain" connectionPassword="password"
+		connectionURL="ldaps://dc1@domain" alternateURL="ldaps://dc2@domain"
+		userBase="OU=org unit,DC=domain,DC=com" userSearch="(sAMAccountName={0})"
+		userRoleName="member" roleBase="CN=container,DC=domain,DC=com" roleName="CN"
+		roleSearch="(member={0})" roleSubtree="true" userSubtree="true" />
+-->	
+<!-- 
+Do NOT adjust the following settings:
+name, auth, type, validationQuery, testOnBorrow, driverClassName,
+removeAbandoned, removeAbandonedTimeout. You may adjust all other settings
+to match your load and database.
+ -->
+	<Resource name="jdbc/contrack" auth="Container" type="javax.sql.DataSource"
+		maxActive="10" maxIdle="5" validationQuery="select 1" testOnBorrow="true"
+		testWhileIdle="true" timeBetweenEvictionRunsMillis="10000" username="root"
+		password="password" driverClassName="com.mysql.jdbc.Driver"
+		minEvictableIdleTimeMillis="60000" maxWait="10000"
+		url="jdbc:mysql://localhost:3306/contrack" removeAbandoned="true"
+		removeAbandonedTimeout="60" logAbandoned="true" />
+<!-- 
+If you are using the SQL user database, leave the following uncommented
+and UNMODIFIED
+ -->	
+	<Realm className="org.apache.catalina.realm.DataSourceRealm" debug="99"
+	   dataSourceName="jdbc/contrack"
+	   digest="MD5"
+	   localDataSource="true"
+	   userTable="users" userNameCol="username" userCredCol="password"
+	   userRoleTable="user_roles" roleNameCol="role_name"/>
+
+</Context>

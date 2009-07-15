@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<domains project-version="3.0">
+<domain name="KlickFile">
+	<property name="cayenne.DataRowStore.snapshot.size" value="10000"/>
+
+	<map name="KlickFileMap" location="KlickFileMap.map.xml"/>
+	<map name="KlickFileParentMap" location="KlickFileParentMap.map.xml"/>
+
+	<node name="KlickFileNode"
+		 datasource="jdbc/kf"
+		 adapter="org.apache.cayenne.dba.mysql.MySQLAdapter"
+		 factory="org.apache.cayenne.conf.JNDIDataSourceFactory">
+			<map-ref name="KlickFileMap"/>
+			<map-ref name="KlickFileParentMap"/>
+	 </node>
+</domain>
+</domains>

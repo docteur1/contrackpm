@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data-map project-version="3.0">
+	<property name="defaultPackage" value="accounting.ce"/>
+	<property name="clientSupported" value="true"/>
+	<property name="defaultClientPackage" value="accounting.ce.client"/>
+	<db-entity name="apcheck">
+		<db-attribute name="apamt" type="DOUBLE"/>
+		<db-attribute name="checknum" type="INTEGER" isPrimaryKey="true" isMandatory="true" length="10"/>
+		<db-attribute name="name" type="VARCHAR" length="31"/>
+		<db-attribute name="vouchernum" type="INTEGER" isPrimaryKey="true" isMandatory="true" length="10"/>
+	</db-entity>
+	<db-entity name="apvoucher">
+		<db-attribute name="amount" type="DOUBLE" isMandatory="true" length="15"/>
+		<db-attribute name="des" type="VARCHAR" length="31"/>
+		<db-attribute name="disctaken" type="DOUBLE" isMandatory="true" length="15"/>
+		<db-attribute name="invdate" type="DATE" length="10"/>
+		<db-attribute name="invnum" type="VARCHAR" length="11"/>
+		<db-attribute name="memo" type="LONGVARCHAR" isMandatory="true" length="10000"/>
+		<db-attribute name="ponum" type="VARCHAR" length="11"/>
+		<db-attribute name="ptd" type="DOUBLE" isMandatory="true" length="15"/>
+		<db-attribute name="retheld" type="DOUBLE" isMandatory="true" length="15"/>
+		<db-attribute name="venname" type="VARCHAR" length="31"/>
+		<db-attribute name="vennum" type="VARCHAR" length="9"/>
+		<db-attribute name="vouchernum" type="INTEGER" isPrimaryKey="true" isMandatory="true" length="10"/>
+	</db-entity>
+	<db-entity name="apvoucherdist">
+		<db-attribute name="amount" type="DOUBLE" isMandatory="true" length="15"/>
+		<db-attribute name="catnum" type="VARCHAR" length="7"/>
+		<db-attribute name="costtype" type="SMALLINT" isMandatory="true" length="5"/>
+		<db-attribute name="des" type="VARCHAR" length="31"/>
+		<db-attribute name="disctaken" type="DOUBLE" isMandatory="true" length="15"/>
+		<db-attribute name="jobnum" type="VARCHAR" length="11"/>
+		<db-attribute name="phasenum" type="VARCHAR" length="5"/>
+		<db-attribute name="ptd" type="DOUBLE" isMandatory="true" length="15"/>
+		<db-attribute name="retheld" type="DOUBLE" isMandatory="true" length="15"/>
+		<db-attribute name="sequence" type="SMALLINT" isPrimaryKey="true" isMandatory="true"/>
+		<db-attribute name="vennum" type="VARCHAR" length="9"/>
+		<db-attribute name="vouchernum" type="INTEGER" isPrimaryKey="true" isMandatory="true" length="10"/>
+	</db-entity>
+	<db-entity name="glinfo">
+		<db-attribute name="glperiod" type="INTEGER" isMandatory="true" length="10"/>
+		<db-attribute name="id" type="SMALLINT" isPrimaryKey="true" isMandatory="true" length="5"/>
+		<db-attribute name="startmonth" type="SMALLINT" isMandatory="true" length="5"/>
+	</db-entity>
+	<db-entity name="jccat">
+		<db-attribute name="budget0_amount" type="DOUBLE" length="15"/>
+		<db-attribute name="budget0_hours" type="DOUBLE" length="15"/>
+		<db-attribute name="budget10_amount" type="DOUBLE" length="15"/>
+		<db-attribute name="budget10_hours" type="DOUBLE" length="15"/>
+		<db-attribute name="budget11_amount" type="DOUBLE" length="15"/>
+		<db-attribute name="budget11_hours" type="DOUBLE" length="15"/>
+		<db-attribute name="budget12_amount" type="DOUBLE" length="15"/>
+		<db-attribute name="budget12_hours" type="DOUBLE" length="15"/>
+		<db-attribute name="budget13_amount" type="DOUBLE" length="15"/>
+		<db-attribute name="budget13_hours" type="DOUBLE" length="15"/>
+		<db-attribute name="budget14_amount" type="DOUBLE" length="15"/>
+		<db-attribute name="budget14_hours" type="DOUBLE" length="15"/>
+		<db-attribute name="budget15_amount" type="DOUBLE" length="15"/>
+		<db-attribute name="budget15_hours" type="DOUBLE" length="15"/>
+		<db-attribute name="budget16_amount" type="DOUBLE" length="15"/>
+		<db-attribute name="budget16_hours" type="DOUBLE" length="15"/>
+		<db-attribute name="budget1_amount" type="DOUBLE" length="15"/>
+		<db-attribute name="budget1_hours" type="DOUBLE" length="15"/>
+		<db-attribute name="budget2_amount" type="DOUBLE" length="15"/>
+		<db-attribute name="budget2_hours" type="DOUBLE" length="15"/>
+		<db-attribute name="budget3_amount" type="DOUBLE" length="15"/>
+		<db-attribute name="budget3_hours" type="DOUBLE" length="15"/>
+		<db-attribute name="budget4_amount" type="DOUBLE" length="15"/>
+		<db-attribute name="budget4_hours" type="DOUBLE" length="15"/>
+		<db-attribute name="budget5_amount" type="DOUBLE" length="15"/>
+		<db-attribute name="budget5_hours" type="DOUBLE" length="15"/>
+		<db-attribute name="budget6_amount" type="DOUBLE" length="15"/>
+		<db-attribute name="budget6_hours" type="DOUBLE" length="15"/>
+		<db-attribute name="budget7_amount" type="DOUBLE" length="15"/>
+		<db-attribute name="budget7_hours" type="DOUBLE" length="15"/>
+		<db-attribute name="budget8_amount" type="DOUBLE" length="15"/>
+		<db-attribute name="budget8_hours" type="DOUBLE" length="15"/>
+		<db-attribute name="budget9_amount" type="DOUBLE" length="15"/>
+		<db-attribute name="budget9_hours" type="DOUBLE" length="15"/>
+		<db-attribute name="catnum" type="VARCHAR" isPrimaryKey="true" length="7"/>
+		<db-attribute name="jobnum" type="VARCHAR" isPrimaryKey="true" length="11"/>
+		<db-attribute name="name" type="VARCHAR" length="31"/>
+		<db-attribute name="phasenum" type="VARCHAR" isPrimaryKey="true" length="5"/>
+		<db-attribute name="sequence" type="SMALLINT" isMandatory="true" length="5"/>
+	</db-entity>
+	<db-entity name="jcchangeorder">
+		<db-attribute name="conum" type="VARCHAR" length="11"/>
+		<db-attribute name="date" type="DATE" length="10"/>
+		<db-attribute name="des" type="VARCHAR" length="31"/>
+		<db-attribute name="jobnum" type="VARCHAR" isPrimaryKey="true" length="11"/>
+		<db-attribute name="notes" type="LONGVARCHAR" isMandatory="true" length="10000"/>
+		<db-attribute name="ordernum" type="VARCHAR" isPrimaryKey="true" length="11"/>
+		<db-attribute name="type" type="SMALLINT" isMandatory="true" length="5"/>
+		<db-key-generator>
+			<db-generator-type>ORACLE</db-generator-type>
+		</db-key-generator>
+	</db-entity>
+	<db-entity name="jcchangeorderstep">
+		<db-attribute name="date" type="DATE" length="10"/>
+		<db-attribute name="jobnum" type="VARCHAR" isPrimaryKey="true" length="11"/>
+		<db-attribute name="ordernum" type="VARCHAR" isPrimaryKey="true" length="11"/>
+		<db-attribute name="type" type="SMALLINT" isPrimaryKey="true" isMandatory="true" length="5"/>
+		<db-attribute name="who" type="VARCHAR" length="31"/>
+	</db-entity>
+	<db-entity name="jcdetail">
+		<db-attribute name="catnum" type="VARCHAR" isPrimaryKey="true" length="7"/>
+		<db-attribute name="cost" type="DOUBLE" isMandatory="true" length="15"/>
+		<db-attribute name="date" type="DATE" isPrimaryKey="true" length="10"/>
+		<db-attribute name="dateposted" type="DATE" length="10"/>
+		<db-attribute name="des1" type="VARCHAR" length="31"/>
+		<db-attribute name="des2" type="VARCHAR" length="31"/>
+		<db-attribute name="glperiod" type="INTEGER" isMandatory="true" length="10"/>
+		<db-attribute name="hours" type="DOUBLE" isMandatory="true" length="15"/>
+		<db-attribute name="invnum" type="VARCHAR" length="11"/>
+		<db-attribute name="jcunique" type="INTEGER" isMandatory="true" length="10"/>
+		<db-attribute name="jobnum" type="VARCHAR" isPrimaryKey="true" length="11"/>
+		<db-attribute name="minortype" type="SMALLINT" length="5"/>
+		<db-attribute name="phasenum" type="VARCHAR" isPrimaryKey="true" length="5"/>
+		<db-attribute name="ponum" type="VARCHAR" length="11"/>
+		<db-attribute name="serialnum" type="INTEGER" isPrimaryKey="true" length="10"/>
+		<db-attribute name="type" type="SMALLINT" isMandatory="true" length="5"/>
+		<db-attribute name="who" type="VARCHAR" length="31"/>
+	</db-entity>
+	<db-entity name="jcdetailsum">
+		<db-attribute name="catnum" type="VARCHAR" isPrimaryKey="true" isMandatory="true" length="7"/>
+		<db-attribute name="cost" type="DOUBLE" isMandatory="true" length="15"/>
+		<db-attribute name="hours" type="DOUBLE" isMandatory="true" length="15"/>
+		<db-attribute name="jobnum" type="VARCHAR" isPrimaryKey="true" isMandatory="true" length="11"/>
+		<db-attribute name="phasenum" type="VARCHAR" isPrimaryKey="true" isMandatory="true" length="5"/>
+		<db-attribute name="type" type="SMALLINT" isPrimaryKey="true" isMandatory="true" length="5"/>
+	</db-entity>
+	<db-entity name="jcjob">
+		<db-attribute name="jobnum" type="VARCHAR" isPrimaryKey="true" length="11"/>
+		<db-attribute name="overheadpcnt1" type="REAL" isMandatory="true" length="7"/>
+		<db-attribute name="overheadpcnt10" type="REAL" isMandatory="true" length="7"/>
+		<db-attribute name="overheadpcnt11" type="REAL" isMandatory="true" length="7"/>
+		<db-attribute name="overheadpcnt12" type="REAL" isMandatory="true" length="7"/>
+		<db-attribute name="overheadpcnt13" type="REAL" isMandatory="true" length="7"/>
+		<db-attribute name="overheadpcnt14" type="REAL" isMandatory="true" length="7"/>
+		<db-attribute name="overheadpcnt15" type="REAL" isMandatory="true" length="7"/>
+		<db-attribute name="overheadpcnt16" type="REAL" isMandatory="true" length="7"/>
+		<db-attribute name="overheadpcnt2" type="REAL" isMandatory="true" length="7"/>
+		<db-attribute name="overheadpcnt3" type="REAL" isMandatory="true" length="7"/>
+		<db-attribute name="overheadpcnt4" type="REAL" isMandatory="true" length="7"/>
+		<db-attribute name="overheadpcnt5" type="REAL" isMandatory="true" length="7"/>
+		<db-attribute name="overheadpcnt6" type="REAL" isMandatory="true" length="7"/>
+		<db-attribute name="overheadpcnt7" type="REAL" isMandatory="true" length="7"/>
+		<db-attribute name="overheadpcnt8" type="REAL" isMandatory="true" length="7"/>
+		<db-attribute name="overheadpcnt9" type="REAL" isMandatory="true" length="7"/>
+	</db-entity>
+	<db-entity name="jcphase">
+		<db-attribute name="jobnum" type="VARCHAR" isPrimaryKey="true" isMandatory="true" length="11"/>
+		<db-attribute name="name" type="VARCHAR" length="31"/>
+		<db-attribute name="phasenum" type="VARCHAR" isPrimaryKey="true" isMandatory="true" length="5"/>
+		<db-attribute name="sequence" type="SMALLINT" isMandatory="true" length="5"/>
+	</db-entity>
+	<db-entity name="vendor">
+		<db-attribute name="address1" type="VARCHAR" length="31"/>
+		<db-attribute name="addresscity" type="VARCHAR" length="21"/>
+		<db-attribute name="addressstate" type="VARCHAR" length="3"/>
+		<db-attribute name="addresszip" type="VARCHAR" length="11"/>
+		<db-attribute name="costtype" type="SMALLINT" length="5"/>
+		<db-attribute name="email" type="VARCHAR" length="41"/>
+		<db-attribute name="faxnum" type="VARCHAR" length="15"/>
+		<db-attribute name="id" type="VARCHAR" length="16"/>
+		<db-attribute name="memo" type="LONGVARCHAR" length="10000"/>
+		<db-attribute name="name" type="VARCHAR" length="31"/>
+		<db-attribute name="notes1" type="VARCHAR" length="31"/>
+		<db-attribute name="notes2" type="VARCHAR" length="31"/>
+		<db-attribute name="phonenum" type="VARCHAR" length="15"/>
+		<db-attribute name="vennum" type="VARCHAR" isPrimaryKey="true" isMandatory="true" length="9"/>
+		<db-attribute name="web" type="VARCHAR" length="41"/>
+	</db-entity>
+	<obj-entity name="Apcheck" className="accounting.ce.Apcheck" clientClassName="accounting.ce.client.Apcheck" readOnly="true" dbEntityName="apcheck">
+		<obj-attribute name="apamt" type="java.lang.Double" db-attribute-path="apamt"/>
+		<obj-attribute name="checknum" type="java.lang.Integer" db-attribute-path="checknum"/>
+		<obj-attribute name="name" type="java.lang.String" db-attribute-path="name"/>
+	</obj-entity>
+	<obj-entity name="Apvoucher" className="accounting.ce.Apvoucher" clientClassName="accounting.ce.client.Apvoucher" readOnly="true" dbEntityName="apvoucher">
+		<obj-attribute name="amount" type="java.lang.Double" db-attribute-path="amount"/>
+		<obj-attribute name="des" type="java.lang.String" db-attribute-path="des"/>
+		<obj-attribute name="disctaken" type="java.lang.Double" db-attribute-path="disctaken"/>
+		<obj-attribute name="invdate" type="java.util.Date" db-attribute-path="invdate"/>
+		<obj-attribute name="invnum" type="java.lang.String" db-attribute-path="invnum"/>
+		<obj-attribute name="memo" type="java.lang.String" db-attribute-path="memo"/>
+		<obj-attribute name="ponum" type="java.lang.String" db-attribute-path="ponum"/>
+		<obj-attribute name="ptd" type="java.lang.Double" db-attribute-path="ptd"/>
+		<obj-attribute name="retheld" type="java.lang.Double" db-attribute-path="retheld"/>
+		<obj-attribute name="venname" type="java.lang.String" db-attribute-path="venname"/>
+		<obj-attribute name="vennum" type="java.lang.String" db-attribute-path="vennum"/>
+		<obj-attribute name="vouchernum" type="java.lang.Integer" db-attribute-path="vouchernum"/>
+	</obj-entity>
+	<obj-entity name="Apvoucherdist" className="accounting.ce.Apvoucherdist" clientClassName="accounting.ce.client.Apvoucherdist" readOnly="true" dbEntityName="apvoucherdist">
+		<obj-attribute name="amount" type="java.lang.Double" db-attribute-path="amount"/>
+		<obj-attribute name="catnum" type="java.lang.String" db-attribute-path="catnum"/>
+		<obj-attribute name="costtype" type="java.lang.Short" db-attribute-path="costtype"/>
+		<obj-attribute name="des" type="java.lang.String" db-attribute-path="des"/>
+		<obj-attribute name="disctaken" type="java.lang.Double" db-attribute-path="disctaken"/>
+		<obj-attribute name="jobnum" type="java.lang.String" db-attribute-path="jobnum"/>
+		<obj-attribute name="phasenum" type="java.lang.String" db-attribute-path="phasenum"/>
+		<obj-attribute name="ptd" type="java.lang.Double" db-attribute-path="ptd"/>
+		<obj-attribute name="retheld" type="java.lang.Double" db-attribute-path="retheld"/>
+		<obj-attribute name="vennum" type="java.lang.String" db-attribute-path="vennum"/>
+	</obj-entity>
+	<obj-entity name="Glinfo" className="accounting.ce.Glinfo" clientClassName="accounting.ce.client.Glinfo" readOnly="true" dbEntityName="glinfo">
+		<obj-attribute name="glperiod" type="java.lang.Integer" db-attribute-path="glperiod"/>
+		<obj-attribute name="startmonth" type="java.lang.Integer" db-attribute-path="startmonth"/>
+	</obj-entity>
+	<obj-entity name="Jccat" className="accounting.ce.Jccat" clientClassName="accounting.ce.client.Jccat" dbEntityName="jccat">
+		<obj-attribute name="budget0Amount" type="java.lang.Double" db-attribute-path="budget0_amount"/>
+		<obj-attribute name="budget0Hours" type="java.lang.Double" db-attribute-path="budget0_hours"/>
+		<obj-attribute name="budget10Amount" type="java.lang.Double" db-attribute-path="budget10_amount"/>
+		<obj-attribute name="budget10Hours" type="java.lang.Double" db-attribute-path="budget10_hours"/>
+		<obj-attribute name="budget11Amount" type="java.lang.Double" db-attribute-path="budget11_amount"/>
+		<obj-attribute name="budget11Hours" type="java.lang.Double" db-attribute-path="budget11_hours"/>
+		<obj-attribute name="budget12Amount" type="java.lang.Double" db-attribute-path="budget12_amount"/>
+		<obj-attribute name="budget12Hours" type="java.lang.Double" db-attribute-path="budget12_hours"/>
+		<obj-attribute name="budget13Amount" type="java.lang.Double" db-attribute-path="budget13_amount"/>
+		<obj-attribute name="budget13Hours" type="java.lang.Double" db-attribute-path="budget13_hours"/>
+		<obj-attribute name="budget14Amount" type="java.lang.Double" db-attribute-path="budget14_amount"/>
+		<obj-attribute name="budget14Hours" type="java.lang.Double" db-attribute-path="budget14_hours"/>
+		<obj-attribute name="budget15Amount" type="java.lang.Double" db-attribute-path="budget15_amount"/>
+		<obj-attribute name="budget15Hours" type="java.lang.Double" db-attribute-path="budget15_hours"/>
+		<obj-attribute name="budget16Amount" type="java.lang.Double" db-attribute-path="budget16_amount"/>
+		<obj-attribute name="budget16Hours" type="java.lang.Double" db-attribute-path="budget16_hours"/>
+		<obj-attribute name="budget1Amount" type="java.lang.Double" db-attribute-path="budget1_amount"/>
+		<obj-attribute name="budget1Hours" type="java.lang.Double" db-attribute-path="budget1_hours"/>
+		<obj-attribute name="budget2Amount" type="java.lang.Double" db-attribute-path="budget2_amount"/>
+		<obj-attribute name="budget2Hours" type="java.lang.Double" db-attribute-path="budget2_hours"/>
+		<obj-attribute name="budget3Amount" type="java.lang.Double" db-attribute-path="budget3_amount"/>
+		<obj-attribute name="budget3Hours" type="java.lang.Double" db-attribute-path="budget3_hours"/>
+		<obj-attribute name="budget4Amount" type="java.lang.Double" db-attribute-path="budget4_amount"/>
+		<obj-attribute name="budget4Hours" type="java.lang.Double" db-attribute-path="budget4_hours"/>
+		<obj-attribute name="budget5Amount" type="java.lang.Double" db-attribute-path="budget5_amount"/>
+		<obj-attribute name="budget5Hours" type="java.lang.Double" db-attribute-path="budget5_hours"/>
+		<obj-attribute name="budget6Amount" type="java.lang.Double" db-attribute-path="budget6_amount"/>
+		<obj-attribute name="budget6Hours" type="java.lang.Double" db-attribute-path="budget6_hours"/>
+		<obj-attribute name="budget7Amount" type="java.lang.Double" db-attribute-path="budget7_amount"/>
+		<obj-attribute name="budget7Hours" type="java.lang.Double" db-attribute-path="budget7_hours"/>
+		<obj-attribute name="budget8Amount" type="java.lang.Double" db-attribute-path="budget8_amount"/>
+		<obj-attribute name="budget8Hours" type="java.lang.Double" db-attribute-path="budget8_hours"/>
+		<obj-attribute name="budget9Amount" type="java.lang.Double" db-attribute-path="budget9_amount"/>
+		<obj-attribute name="budget9Hours" type="java.lang.Double" db-attribute-path="budget9_hours"/>
+		<obj-attribute name="catnum" type="java.lang.String" db-attribute-path="catnum"/>
+		<obj-attribute name="jobnum" type="java.lang.String" db-attribute-path="jobnum"/>
+		<obj-attribute name="name" type="java.lang.String" db-attribute-path="name"/>
+		<obj-attribute name="phasenum" type="java.lang.String" db-attribute-path="phasenum"/>
+		<obj-attribute name="sequence" type="java.lang.Integer" db-attribute-path="sequence"/>
+	</obj-entity>
+	<obj-entity name="Jcchangeorder" className="accounting.ce.Jcchangeorder" clientClassName="accounting.ce.client.Jcchangeorder" dbEntityName="jcchangeorder">
+		<obj-attribute name="conum" type="java.lang.String" db-attribute-path="conum"/>
+		<obj-attribute name="date" type="java.sql.Date" db-attribute-path="date"/>
+		<obj-attribute name="des" type="java.lang.String" db-attribute-path="des"/>
+		<obj-attribute name="jobnum" type="java.lang.String" db-attribute-path="jobnum"/>
+		<obj-attribute name="notes" type="java.lang.String" db-attribute-path="notes"/>
+		<obj-attribute name="ordernum" type="java.lang.String" db-attribute-path="ordernum"/>
+		<obj-attribute name="type" type="java.lang.Integer" db-attribute-path="type"/>
+	</obj-entity>
+	<obj-entity name="Jcchangeorderstep" className="accounting.ce.Jcchangeorderstep" clientClassName="accounting.ce.client.Jcchangeorderstep" dbEntityName="jcchangeorderstep">
+		<obj-attribute name="date" type="java.sql.Date" db-attribute-path="date"/>
+		<obj-attribute name="jobnum" type="java.lang.String" db-attribute-path="jobnum"/>
+		<obj-attribute name="ordernum" type="java.lang.String" db-attribute-path="ordernum"/>
+		<obj-attribute name="type" type="java.lang.Integer" db-attribute-path="type"/>
+		<obj-attribute name="who" type="java.lang.String" db-attribute-path="who"/>
+	</obj-entity>
+	<obj-entity name="Jcdetail" className="accounting.ce.Jcdetail" clientClassName="accounting.ce.client.Jcdetail" dbEntityName="jcdetail">
+		<obj-attribute name="catnum" type="java.lang.String" db-attribute-path="catnum"/>
+		<obj-attribute name="cost" type="java.lang.Double" db-attribute-path="cost"/>
+		<obj-attribute name="date" type="java.util.Date" db-attribute-path="date"/>
+		<obj-attribute name="dateposted" type="java.util.Date" db-attribute-path="dateposted"/>
+		<obj-attribute name="des1" type="java.lang.String" db-attribute-path="des1"/>
+		<obj-attribute name="des2" type="java.lang.String" db-attribute-path="des2"/>
+		<obj-attribute name="glperiod" type="java.lang.Integer" db-attribute-path="glperiod"/>
+		<obj-attribute name="hours" type="java.lang.Double" db-attribute-path="hours"/>
+		<obj-attribute name="invnum" type="java.lang.String" db-attribute-path="invnum"/>
+		<obj-attribute name="jcunique" type="java.lang.Integer" db-attribute-path="jcunique"/>
+		<obj-attribute name="jobnum" type="java.lang.String" db-attribute-path="jobnum"/>
+		<obj-attribute name="minortype" type="java.lang.Integer" db-attribute-path="minortype"/>
+		<obj-attribute name="phasenum" type="java.lang.String" db-attribute-path="phasenum"/>
+		<obj-attribute name="ponum" type="java.lang.String" db-attribute-path="ponum"/>
+		<obj-attribute name="serialnum" type="java.lang.Integer" db-attribute-path="serialnum"/>
+		<obj-attribute name="type" type="java.lang.Integer" db-attribute-path="type"/>
+		<obj-attribute name="who" type="java.lang.String" db-attribute-path="who"/>
+	</obj-entity>
+	<obj-entity name="Jcdetailsum" className="accounting.ce.Jcdetailsum" clientClassName="accounting.ce.client.Jcdetailsum" dbEntityName="jcdetailsum">
+		<obj-attribute name="catnum" type="java.lang.String" db-attribute-path="catnum"/>
+		<obj-attribute name="cost" type="java.lang.Double" db-attribute-path="cost"/>
+		<obj-attribute name="hours" type="java.lang.Double" db-attribute-path="hours"/>
+		<obj-attribute name="jobnum" type="java.lang.String" db-attribute-path="jobnum"/>
+		<obj-attribute name="phasenum" type="java.lang.String" db-attribute-path="phasenum"/>
+		<obj-attribute name="type" type="java.lang.Integer" db-attribute-path="type"/>
+	</obj-entity>
+	<obj-entity name="Jcjob" className="accounting.ce.Jcjob" clientClassName="accounting.ce.client.Jcjob" readOnly="true" dbEntityName="jcjob">
+		<obj-attribute name="jobnum" type="java.lang.String" db-attribute-path="jobnum"/>
+		<obj-attribute name="overheadpcnt1" type="java.lang.Float" db-attribute-path="overheadpcnt1"/>
+		<obj-attribute name="overheadpcnt10" type="java.lang.Float" db-attribute-path="overheadpcnt10"/>
+		<obj-attribute name="overheadpcnt11" type="java.lang.Float" db-attribute-path="overheadpcnt11"/>
+		<obj-attribute name="overheadpcnt12" type="java.lang.Float" db-attribute-path="overheadpcnt12"/>
+		<obj-attribute name="overheadpcnt13" type="java.lang.Float" db-attribute-path="overheadpcnt13"/>
+		<obj-attribute name="overheadpcnt14" type="java.lang.Float" db-attribute-path="overheadpcnt14"/>
+		<obj-attribute name="overheadpcnt15" type="java.lang.Float" db-attribute-path="overheadpcnt15"/>
+		<obj-attribute name="overheadpcnt16" type="java.lang.Float" db-attribute-path="overheadpcnt16"/>
+		<obj-attribute name="overheadpcnt2" type="java.lang.Float" db-attribute-path="overheadpcnt2"/>
+		<obj-attribute name="overheadpcnt3" type="java.lang.Float" db-attribute-path="overheadpcnt3"/>
+		<obj-attribute name="overheadpcnt4" type="java.lang.Float" db-attribute-path="overheadpcnt4"/>
+		<obj-attribute name="overheadpcnt5" type="java.lang.Float" db-attribute-path="overheadpcnt5"/>
+		<obj-attribute name="overheadpcnt6" type="java.lang.Float" db-attribute-path="overheadpcnt6"/>
+		<obj-attribute name="overheadpcnt7" type="java.lang.Float" db-attribute-path="overheadpcnt7"/>
+		<obj-attribute name="overheadpcnt8" type="java.lang.Float" db-attribute-path="overheadpcnt8"/>
+		<obj-attribute name="overheadpcnt9" type="java.lang.Float" db-attribute-path="overheadpcnt9"/>
+	</obj-entity>
+	<obj-entity name="Jcphase" className="accounting.ce.Jcphase" clientClassName="accounting.ce.client.Jcphase" dbEntityName="jcphase">
+		<obj-attribute name="jobnum" type="java.lang.String" db-attribute-path="jobnum"/>
+		<obj-attribute name="name" type="java.lang.String" db-attribute-path="name"/>
+		<obj-attribute name="phasenum" type="java.lang.String" db-attribute-path="phasenum"/>
+		<obj-attribute name="sequence" type="java.lang.Integer" db-attribute-path="sequence"/>
+	</obj-entity>
+	<obj-entity name="Vendor" className="accounting.ce.Vendor" clientClassName="accounting.ce.client.Vendor" readOnly="true" dbEntityName="vendor">
+		<obj-attribute name="address1" type="java.lang.String" db-attribute-path="address1"/>
+		<obj-attribute name="addresscity" type="java.lang.String" db-attribute-path="addresscity"/>
+		<obj-attribute name="addressstate" type="java.lang.String" db-attribute-path="addressstate"/>
+		<obj-attribute name="addresszip" type="java.lang.String" db-attribute-path="addresszip"/>
+		<obj-attribute name="costtype" type="java.lang.Integer" db-attribute-path="costtype"/>
+		<obj-attribute name="email" type="java.lang.String" db-attribute-path="email"/>
+		<obj-attribute name="faxnum" type="java.lang.String" db-attribute-path="faxnum"/>
+		<obj-attribute name="id" type="java.lang.String" db-attribute-path="id"/>
+		<obj-attribute name="memo" type="java.lang.String" db-attribute-path="memo"/>
+		<obj-attribute name="name" type="java.lang.String" db-attribute-path="name"/>
+		<obj-attribute name="notes1" type="java.lang.String" db-attribute-path="notes1"/>
+		<obj-attribute name="notes2" type="java.lang.String" db-attribute-path="notes2"/>
+		<obj-attribute name="phonenum" type="java.lang.String" db-attribute-path="phonenum"/>
+		<obj-attribute name="vennum" type="java.lang.String" db-attribute-path="vennum"/>
+		<obj-attribute name="web" type="java.lang.String" db-attribute-path="web"/>
+	</obj-entity>
+	<db-relationship name="vouchers" source="apcheck" target="apvoucher" toMany="false">
+		<db-attribute-pair source="vouchernum" target="vouchernum"/>
+	</db-relationship>
+	<db-relationship name="checks" source="apvoucher" target="apcheck" toDependentPK="true" toMany="true">
+		<db-attribute-pair source="vouchernum" target="vouchernum"/>
+	</db-relationship>
+	<db-relationship name="distribution" source="apvoucher" target="apvoucherdist" toDependentPK="true" toMany="true">
+		<db-attribute-pair source="vouchernum" target="vouchernum"/>
+	</db-relationship>
+	<db-relationship name="vendor" source="apvoucher" target="vendor" toMany="false">
+		<db-attribute-pair source="vennum" target="vennum"/>
+	</db-relationship>
+	<db-relationship name="cat" source="apvoucherdist" target="jccat" toMany="false">
+		<db-attribute-pair source="catnum" target="catnum"/>
+		<db-attribute-pair source="jobnum" target="jobnum"/>
+		<db-attribute-pair source="phasenum" target="phasenum"/>
+	</db-relationship>
+	<db-relationship name="job" source="apvoucherdist" target="jcjob" toMany="false">
+		<db-attribute-pair source="jobnum" target="jobnum"/>
+	</db-relationship>
+	<db-relationship name="phase" source="apvoucherdist" target="jcphase" toMany="false">
+		<db-attribute-pair source="jobnum" target="jobnum"/>
+		<db-attribute-pair source="phasenum" target="phasenum"/>
+	</db-relationship>
+	<db-relationship name="voucher" source="apvoucherdist" target="apvoucher" toMany="false">
+		<db-attribute-pair source="vouchernum" target="vouchernum"/>
+	</db-relationship>
+	<db-relationship name="detail" source="jccat" target="jcdetail" toMany="true">
+		<db-attribute-pair source="catnum" target="catnum"/>
+		<db-attribute-pair source="jobnum" target="jobnum"/>
+		<db-attribute-pair source="phasenum" target="phasenum"/>
+	</db-relationship>
+	<db-relationship name="job" source="jccat" target="jcjob" toMany="false">
+		<db-attribute-pair source="jobnum" target="jobnum"/>
+	</db-relationship>
+	<db-relationship name="phase" source="jccat" target="jcphase" toMany="false">
+		<db-attribute-pair source="phasenum" target="phasenum"/>
+		<db-attribute-pair source="jobnum" target="jobnum"/>
+	</db-relationship>
+	<db-relationship name="voucherdist" source="jccat" target="apvoucherdist" toMany="true">
+		<db-attribute-pair source="catnum" target="catnum"/>
+		<db-attribute-pair source="jobnum" target="jobnum"/>
+		<db-attribute-pair source="phasenum" target="phasenum"/>
+	</db-relationship>
+	<db-relationship name="changeordersteps" source="jcchangeorder" target="jcchangeorderstep" toMany="true">
+		<db-attribute-pair source="jobnum" target="jobnum"/>
+		<db-attribute-pair source="ordernum" target="ordernum"/>
+	</db-relationship>
+	<db-relationship name="changeorder" source="jcchangeorderstep" target="jcchangeorder" toDependentPK="true" toMany="false">
+		<db-attribute-pair source="jobnum" target="jobnum"/>
+		<db-attribute-pair source="ordernum" target="ordernum"/>
+	</db-relationship>
+	<db-relationship name="cat" source="jcdetail" target="jccat" toMany="false">
+		<db-attribute-pair source="catnum" target="catnum"/>
+		<db-attribute-pair source="jobnum" target="jobnum"/>
+		<db-attribute-pair source="phasenum" target="phasenum"/>
+	</db-relationship>
+	<db-relationship name="job" source="jcdetail" target="jcjob" toMany="false">
+		<db-attribute-pair source="jobnum" target="jobnum"/>
+	</db-relationship>
+	<db-relationship name="phase" source="jcdetail" target="jcphase" toMany="false">
+		<db-attribute-pair source="phasenum" target="phasenum"/>
+		<db-attribute-pair source="jobnum" target="jobnum"/>
+	</db-relationship>
+	<db-relationship name="cats" source="jcjob" target="jccat" toDependentPK="true" toMany="true">
+		<db-attribute-pair source="jobnum" target="jobnum"/>
+	</db-relationship>
+	<db-relationship name="detail" source="jcjob" target="jcdetail" toMany="true">
+		<db-attribute-pair source="jobnum" target="jobnum"/>
+	</db-relationship>
+	<db-relationship name="phases" source="jcjob" target="jcphase" toDependentPK="true" toMany="true">
+		<db-attribute-pair source="jobnum" target="jobnum"/>
+	</db-relationship>
+	<db-relationship name="voucherdist" source="jcjob" target="apvoucherdist" toMany="true">
+		<db-attribute-pair source="jobnum" target="jobnum"/>
+	</db-relationship>
+	<db-relationship name="cats" source="jcphase" target="jccat" toDependentPK="true" toMany="true">
+		<db-attribute-pair source="phasenum" target="phasenum"/>
+		<db-attribute-pair source="jobnum" target="jobnum"/>
+	</db-relationship>
+	<db-relationship name="detail" source="jcphase" target="jcdetail" toMany="true">
+		<db-attribute-pair source="phasenum" target="phasenum"/>
+		<db-attribute-pair source="jobnum" target="jobnum"/>
+	</db-relationship>
+	<db-relationship name="job" source="jcphase" target="jcjob" toMany="false">
+		<db-attribute-pair source="jobnum" target="jobnum"/>
+	</db-relationship>
+	<db-relationship name="voucherdist" source="jcphase" target="apvoucherdist" toMany="true">
+		<db-attribute-pair source="jobnum" target="jobnum"/>
+		<db-attribute-pair source="phasenum" target="phasenum"/>
+	</db-relationship>
+	<db-relationship name="vouchers" source="vendor" target="apvoucher" toMany="true">
+		<db-attribute-pair source="vennum" target="vennum"/>
+	</db-relationship>
+	<obj-relationship name="voucher" source="Apcheck" target="Apvoucher" db-relationship-path="vouchers"/>
+	<obj-relationship name="checks" source="Apvoucher" target="Apcheck" db-relationship-path="checks"/>
+	<obj-relationship name="distribution" source="Apvoucher" target="Apvoucherdist" db-relationship-path="distribution"/>
+	<obj-relationship name="vendor" source="Apvoucher" target="Vendor" db-relationship-path="vendor"/>
+	<obj-relationship name="cat" source="Apvoucherdist" target="Jccat" db-relationship-path="cat"/>
+	<obj-relationship name="job" source="Apvoucherdist" target="Jcjob" db-relationship-path="job"/>
+	<obj-relationship name="phase" source="Apvoucherdist" target="Jcphase" db-relationship-path="phase"/>
+	<obj-relationship name="voucher" source="Apvoucherdist" target="Apvoucher" db-relationship-path="voucher"/>
+	<obj-relationship name="detail" source="Jccat" target="Jcdetail" db-relationship-path="detail"/>
+	<obj-relationship name="job" source="Jccat" target="Jcjob" db-relationship-path="job"/>
+	<obj-relationship name="phase" source="Jccat" target="Jcphase" db-relationship-path="phase"/>
+	<obj-relationship name="voucherdist" source="Jccat" target="Apvoucherdist" db-relationship-path="voucherdist"/>
+	<obj-relationship name="changeordersteps" source="Jcchangeorder" target="Jcchangeorderstep" db-relationship-path="changeordersteps"/>
+	<obj-relationship name="changeorder" source="Jcchangeorderstep" target="Jcchangeorder" db-relationship-path="changeorder"/>
+	<obj-relationship name="cat" source="Jcdetail" target="Jccat" db-relationship-path="cat"/>
+	<obj-relationship name="job" source="Jcdetail" target="Jcjob" db-relationship-path="job"/>
+	<obj-relationship name="phase" source="Jcdetail" target="Jcphase" db-relationship-path="phase"/>
+	<obj-relationship name="cats" source="Jcjob" target="Jccat" db-relationship-path="cats"/>
+	<obj-relationship name="detail" source="Jcjob" target="Jcdetail" db-relationship-path="detail"/>
+	<obj-relationship name="phases" source="Jcjob" target="Jcphase" db-relationship-path="phases"/>
+	<obj-relationship name="voucherdist" source="Jcjob" target="Apvoucherdist" db-relationship-path="voucherdist"/>
+	<obj-relationship name="cats" source="Jcphase" target="Jccat" db-relationship-path="cats"/>
+	<obj-relationship name="detail" source="Jcphase" target="Jcdetail" db-relationship-path="detail"/>
+	<obj-relationship name="job" source="Jcphase" target="Jcjob" db-relationship-path="job"/>
+	<obj-relationship name="voucherdist" source="Jcphase" target="Apvoucherdist" db-relationship-path="voucherdist"/>
+	<obj-relationship name="vouchers" source="Vendor" target="Apvoucher" db-relationship-path="vouchers"/>
+</data-map>

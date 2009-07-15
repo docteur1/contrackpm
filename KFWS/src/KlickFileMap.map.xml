@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data-map project-version="3.0">
+	<property name="defaultPackage" value="kf"/>
+	<property name="defaultSchema" value="kfEPCO"/>
+	<property name="clientSupported" value="true"/>
+	<property name="defaultClientPackage" value="kf.client"/>
+	<db-entity name="_users" schema="kfEPCO" catalog="kfepco">
+		<db-attribute name="Email" type="VARCHAR" isMandatory="true" length="200"/>
+		<db-attribute name="FirstName" type="VARCHAR" isMandatory="true" length="50"/>
+		<db-attribute name="ImgUrl" type="VARCHAR" length="250"/>
+		<db-attribute name="LastActivityDate" type="TIMESTAMP"/>
+		<db-attribute name="LastIP" type="VARCHAR" length="16"/>
+		<db-attribute name="LastLoginDate" type="TIMESTAMP"/>
+		<db-attribute name="LastName" type="VARCHAR" length="50"/>
+		<db-attribute name="LoggedIn" type="BIT" isMandatory="true"/>
+		<db-attribute name="Password" type="VARCHAR" isMandatory="true" length="100"/>
+		<db-attribute name="Phone" type="VARCHAR" length="15"/>
+		<db-attribute name="StartPage" type="VARCHAR" length="30"/>
+		<db-attribute name="Status" type="VARCHAR" isMandatory="true" length="20"/>
+		<db-attribute name="TimeZone" type="INTEGER" length="10"/>
+		<db-attribute name="UserID" type="BIGINT" isPrimaryKey="true" isMandatory="true" length="10"/>
+		<db-attribute name="Username" type="VARCHAR" isMandatory="true" length="100"/>
+	</db-entity>
+	<db-entity name="documents" schema="kfEPCO" catalog="kfepco">
+		<db-attribute name="ArchiveDate" type="INTEGER" length="10"/>
+		<db-attribute name="ArchivePath" type="VARCHAR" length="250"/>
+		<db-attribute name="ArchiveType" type="VARCHAR" length="100"/>
+		<db-attribute name="DateCreated" type="INTEGER" length="10"/>
+		<db-attribute name="DocumentID" type="BIGINT" isPrimaryKey="true" isMandatory="true" length="10"/>
+		<db-attribute name="DocumentName" type="VARCHAR" length="200"/>
+		<db-attribute name="NeedsUpdate" type="TINYINT" length="1"/>
+		<db-attribute name="OwnerID" type="INTEGER" isMandatory="true" length="10"/>
+		<db-attribute name="ProjectID" type="BIGINT" isMandatory="true" length="10"/>
+		<db-attribute name="Status" type="VARCHAR" isMandatory="true" length="30"/>
+	</db-entity>
+	<db-entity name="documentvalues" schema="kfEPCO" catalog="kfepco">
+		<db-attribute name="DocumentID" type="BIGINT" isMandatory="true" length="10"/>
+		<db-attribute name="FieldID" type="BIGINT" isMandatory="true" length="10"/>
+		<db-attribute name="FieldValue" type="LONGVARCHAR" length="65535"/>
+		<db-attribute name="ID" type="BIGINT" isPrimaryKey="true" isMandatory="true" length="10"/>
+		<db-attribute name="ProjectID" type="BIGINT" isMandatory="true" length="10"/>
+	</db-entity>
+	<db-entity name="pages" schema="kfEPCO" catalog="kfepco">
+		<db-attribute name="BatchID" type="INTEGER" length="10"/>
+		<db-attribute name="CreatedByID" type="BIGINT" length="10"/>
+		<db-attribute name="DateCreated" type="INTEGER" length="10"/>
+		<db-attribute name="DocumentID" type="BIGINT" length="10"/>
+		<db-attribute name="Extension" type="CHAR" isMandatory="true" length="3"/>
+		<db-attribute name="PageID" type="BIGINT" isPrimaryKey="true" isMandatory="true" length="10"/>
+		<db-attribute name="PageOrder" type="INTEGER" isMandatory="true" length="10"/>
+		<db-attribute name="ProjectID" type="BIGINT" isMandatory="true" length="10"/>
+	</db-entity>
+	<db-entity name="projectfields" schema="kfEPCO" catalog="kfepco">
+		<db-attribute name="BarcodeCoords" type="VARCHAR" length="30"/>
+		<db-attribute name="DefaultValue" type="VARCHAR" length="250"/>
+		<db-attribute name="DisplayOrder" type="BIGINT" length="10"/>
+		<db-attribute name="FieldID" type="BIGINT" isPrimaryKey="true" isMandatory="true" length="10"/>
+		<db-attribute name="FieldName" type="VARCHAR" isMandatory="true" length="200"/>
+		<db-attribute name="FieldParams" type="LONGVARCHAR" length="65535"/>
+		<db-attribute name="FieldType" type="VARCHAR" isMandatory="true" length="100"/>
+		<db-attribute name="ProjectID" type="BIGINT" isMandatory="true" length="10"/>
+		<db-attribute name="Required" type="CHAR" isMandatory="true" length="1"/>
+		<db-attribute name="ToolTip" type="VARCHAR" length="250"/>
+		<db-attribute name="ZoomCoords" type="VARCHAR" length="30"/>
+	</db-entity>
+	<db-entity name="projects" schema="kfEPCO" catalog="kfepco">
+		<db-attribute name="AccessMethod" type="CHAR" length="6"/>
+		<db-attribute name="BlockIPEnd" type="VARCHAR" length="17"/>
+		<db-attribute name="BlockIPStart" type="VARCHAR" length="17"/>
+		<db-attribute name="CreatedByID" type="BIGINT" isMandatory="true" length="10"/>
+		<db-attribute name="DateCreated" type="INTEGER" isMandatory="true" length="10"/>
+		<db-attribute name="Deleted" type="BIT" isMandatory="true"/>
+		<db-attribute name="NetworkCachePath" type="VARCHAR" isMandatory="true" length="250"/>
+		<db-attribute name="ProjectID" type="BIGINT" isPrimaryKey="true" isMandatory="true" length="10"/>
+		<db-attribute name="ProjectName" type="VARCHAR" isMandatory="true" length="100"/>
+		<db-attribute name="ProjectPath" type="VARCHAR" isMandatory="true" length="250"/>
+		<db-attribute name="RemotePassword" type="VARCHAR" length="200"/>
+		<db-attribute name="RemoteUsername" type="VARCHAR" length="200"/>
+		<db-attribute name="RemoveLookupRow" type="BIT"/>
+		<db-attribute name="WebCachePath" type="VARCHAR" length="250"/>
+	</db-entity>
+	<db-entity name="workflowcomments" schema="kfEPCO" catalog="kfepco">
+		<db-attribute name="Comment" type="LONGVARCHAR" isMandatory="true" length="65535"/>
+		<db-attribute name="CommentID" type="BIGINT" isPrimaryKey="true" isGenerated="true" isMandatory="true" length="10"/>
+		<db-attribute name="Date" type="TIMESTAMP" isMandatory="true"/>
+		<db-attribute name="DocumentID" type="BIGINT" isMandatory="true" length="10"/>
+		<db-attribute name="ProjectID" type="BIGINT" isMandatory="true" length="10"/>
+		<db-attribute name="StepID" type="BIGINT" isMandatory="true" length="10"/>
+		<db-attribute name="UserID" type="BIGINT" isMandatory="true" length="10"/>
+		<db-attribute name="WorkflowID" type="BIGINT" isMandatory="true" length="10"/>
+	</db-entity>
+	<db-entity name="workflowreasons" schema="kfEPCO" catalog="kfepco">
+		<db-attribute name="ProjectID" type="BIGINT" isMandatory="true" length="10"/>
+		<db-attribute name="Reason" type="VARCHAR" isMandatory="true" length="250"/>
+		<db-attribute name="ReasonID" type="BIGINT" isPrimaryKey="true" isMandatory="true" length="10"/>
+		<db-attribute name="ShowOnWorkflow" type="BIT"/>
+		<db-attribute name="Type" type="CHAR" isMandatory="true" length="10"/>
+	</db-entity>
+	<db-entity name="workflows" schema="kfEPCO" catalog="kfepco">
+		<db-attribute name="Created" type="TIMESTAMP" isMandatory="true"/>
+		<db-attribute name="DateCompleted" type="TIMESTAMP"/>
+		<db-attribute name="DocumentID" type="BIGINT" isMandatory="true" length="10"/>
+		<db-attribute name="IsFinished" type="BIT" isMandatory="true"/>
+		<db-attribute name="ProjectID" type="BIGINT" isMandatory="true" length="10"/>
+		<db-attribute name="WorkflowID" type="BIGINT" isPrimaryKey="true" isGenerated="true" isMandatory="true" length="10"/>
+	</db-entity>
+	<db-entity name="workflowsteps" schema="kfEPCO" catalog="kfepco">
+		<db-attribute name="Created" type="TIMESTAMP" isMandatory="true"/>
+		<db-attribute name="DateFinished" type="TIMESTAMP"/>
+		<db-attribute name="DocumentID" type="BIGINT" isMandatory="true" length="10"/>
+		<db-attribute name="FromUserID" type="BIGINT" isMandatory="true" length="10"/>
+		<db-attribute name="IsStepFinished" type="BIT" isMandatory="true"/>
+		<db-attribute name="ProjectID" type="BIGINT" isMandatory="true" length="10"/>
+		<db-attribute name="Reason" type="VARCHAR" isMandatory="true" length="250"/>
+		<db-attribute name="StepID" type="BIGINT" isPrimaryKey="true" isGenerated="true" isMandatory="true" length="10"/>
+		<db-attribute name="ToUserID" type="INTEGER" length="10"/>
+		<db-attribute name="WorkflowID" type="BIGINT" isMandatory="true" length="10"/>
+	</db-entity>
+	<obj-entity name="Document" className="kf.Document" clientClassName="kf.client.Document" dbEntityName="documents">
+		<obj-attribute name="archiveDate" type="java.lang.Integer" db-attribute-path="ArchiveDate"/>
+		<obj-attribute name="archivePath" type="java.lang.String" db-attribute-path="ArchivePath"/>
+		<obj-attribute name="archiveType" type="java.lang.String" db-attribute-path="ArchiveType"/>
+		<obj-attribute name="dateCreated" type="java.lang.Integer" db-attribute-path="DateCreated"/>
+		<obj-attribute name="documentID" type="java.lang.Long" db-attribute-path="DocumentID"/>
+		<obj-attribute name="documentName" type="java.lang.String" db-attribute-path="DocumentName"/>
+		<obj-attribute name="needsUpdate" type="java.lang.Boolean" db-attribute-path="NeedsUpdate"/>
+		<obj-attribute name="ownerID" type="java.lang.Integer" db-attribute-path="OwnerID"/>
+		<obj-attribute name="status" type="java.lang.String" db-attribute-path="Status"/>
+	</obj-entity>
+	<obj-entity name="Documentvalue" className="kf.Documentvalue" clientClassName="kf.client.Documentvalue" dbEntityName="documentvalues">
+		<obj-attribute name="fieldID" type="java.lang.Long" db-attribute-path="FieldID"/>
+		<obj-attribute name="fieldValue" type="java.lang.String" db-attribute-path="FieldValue"/>
+	</obj-entity>
+	<obj-entity name="Page" className="kf.Page" clientClassName="kf.client.Page" readOnly="true" dbEntityName="pages">
+		<obj-attribute name="batchID" type="java.lang.Integer" db-attribute-path="BatchID"/>
+		<obj-attribute name="dateCreated" type="java.lang.Integer" db-attribute-path="DateCreated"/>
+		<obj-attribute name="extension" type="java.lang.String" db-attribute-path="Extension"/>
+		<obj-attribute name="pageID" type="java.lang.Long" db-attribute-path="PageID"/>
+		<obj-attribute name="pageOrder" type="java.lang.Integer" db-attribute-path="PageOrder"/>
+	</obj-entity>
+	<obj-entity name="Project" className="kf.Project" clientClassName="kf.client.Project" readOnly="true" dbEntityName="projects">
+		<obj-attribute name="accessMethod" type="java.lang.String" db-attribute-path="AccessMethod"/>
+		<obj-attribute name="blockIPEnd" type="java.lang.String" db-attribute-path="BlockIPEnd"/>
+		<obj-attribute name="blockIPStart" type="java.lang.String" db-attribute-path="BlockIPStart"/>
+		<obj-attribute name="createdByID" type="java.lang.Long" db-attribute-path="CreatedByID"/>
+		<obj-attribute name="dateCreated" type="java.lang.Integer" db-attribute-path="DateCreated"/>
+		<obj-attribute name="deleted" type="java.lang.Boolean" db-attribute-path="Deleted"/>
+		<obj-attribute name="networkCachePath" type="java.lang.String" db-attribute-path="NetworkCachePath"/>
+		<obj-attribute name="projectID" type="java.lang.Long" db-attribute-path="ProjectID"/>
+		<obj-attribute name="projectName" type="java.lang.String" db-attribute-path="ProjectName"/>
+		<obj-attribute name="projectPath" type="java.lang.String" db-attribute-path="ProjectPath"/>
+		<obj-attribute name="remotePassword" type="java.lang.String" db-attribute-path="RemotePassword"/>
+		<obj-attribute name="remoteUsername" type="java.lang.String" db-attribute-path="RemoteUsername"/>
+		<obj-attribute name="removeLookupRow" type="java.lang.Boolean" db-attribute-path="RemoveLookupRow"/>
+		<obj-attribute name="webCachePath" type="java.lang.String" db-attribute-path="WebCachePath"/>
+	</obj-entity>
+	<obj-entity name="Projectfield" className="kf.Projectfield" clientClassName="kf.client.Projectfield" readOnly="true" dbEntityName="projectfields">
+		<obj-attribute name="barcodeCoords" type="java.lang.String" db-attribute-path="BarcodeCoords"/>
+		<obj-attribute name="defaultValue" type="java.lang.String" db-attribute-path="DefaultValue"/>
+		<obj-attribute name="displayOrder" type="java.lang.Long" db-attribute-path="DisplayOrder"/>
+		<obj-attribute name="fieldID" type="java.lang.Long" db-attribute-path="FieldID"/>
+		<obj-attribute name="fieldName" type="java.lang.String" db-attribute-path="FieldName"/>
+		<obj-attribute name="fieldParams" type="java.lang.String" db-attribute-path="FieldParams"/>
+		<obj-attribute name="fieldType" type="java.lang.String" db-attribute-path="FieldType"/>
+		<obj-attribute name="required" type="java.lang.String" db-attribute-path="Required"/>
+		<obj-attribute name="toolTip" type="java.lang.String" db-attribute-path="ToolTip"/>
+		<obj-attribute name="zoomCoords" type="java.lang.String" db-attribute-path="ZoomCoords"/>
+	</obj-entity>
+	<obj-entity name="User" className="kf.User" clientClassName="kf.client.User" readOnly="true" dbEntityName="_users">
+		<obj-attribute name="email" type="java.lang.String" db-attribute-path="Email"/>
+		<obj-attribute name="firstName" type="java.lang.String" db-attribute-path="FirstName"/>
+		<obj-attribute name="imgUrl" type="java.lang.String" db-attribute-path="ImgUrl"/>
+		<obj-attribute name="lastActivityDate" type="java.util.Date" db-attribute-path="LastActivityDate"/>
+		<obj-attribute name="lastIP" type="java.lang.String" db-attribute-path="LastIP"/>
+		<obj-attribute name="lastLoginDate" type="java.util.Date" db-attribute-path="LastLoginDate"/>
+		<obj-attribute name="lastName" type="java.lang.String" db-attribute-path="LastName"/>
+		<obj-attribute name="loggedIn" type="java.lang.Boolean" db-attribute-path="LoggedIn"/>
+		<obj-attribute name="password" type="java.lang.String" db-attribute-path="Password"/>
+		<obj-attribute name="phone" type="java.lang.String" db-attribute-path="Phone"/>
+		<obj-attribute name="startPage" type="java.lang.String" db-attribute-path="StartPage"/>
+		<obj-attribute name="status" type="java.lang.String" db-attribute-path="Status"/>
+		<obj-attribute name="timeZone" type="java.lang.Integer" db-attribute-path="TimeZone"/>
+		<obj-attribute name="userID" type="java.lang.Long" db-attribute-path="UserID"/>
+		<obj-attribute name="username" type="java.lang.String" db-attribute-path="Username"/>
+	</obj-entity>
+	<obj-entity name="Workflow" className="kf.Workflow" clientClassName="kf.client.Workflow" dbEntityName="workflows">
+		<obj-attribute name="created" type="java.util.Date" db-attribute-path="Created"/>
+		<obj-attribute name="dateCompleted" type="java.util.Date" db-attribute-path="DateCompleted"/>
+		<obj-attribute name="isFinished" type="java.lang.Boolean" db-attribute-path="IsFinished"/>
+	</obj-entity>
+	<obj-entity name="Workflowcomment" className="kf.Workflowcomment" clientClassName="kf.client.Workflowcomment" dbEntityName="workflowcomments">
+		<obj-attribute name="comment" type="java.lang.String" db-attribute-path="Comment"/>
+		<obj-attribute name="date" type="java.util.Date" db-attribute-path="Date"/>
+	</obj-entity>
+	<obj-entity name="Workflowreason" className="kf.Workflowreason" clientClassName="kf.client.Workflowreason" readOnly="true" dbEntityName="workflowreasons">
+		<obj-attribute name="reason" type="java.lang.String" db-attribute-path="Reason"/>
+		<obj-attribute name="reasonID" type="java.lang.Long" db-attribute-path="ReasonID"/>
+		<obj-attribute name="showOnWorkflow" type="java.lang.Boolean" db-attribute-path="ShowOnWorkflow"/>
+		<obj-attribute name="type" type="java.lang.String" db-attribute-path="Type"/>
+	</obj-entity>
+	<obj-entity name="Workflowstep" className="kf.Workflowstep" clientClassName="kf.client.Workflowstep" dbEntityName="workflowsteps">
+		<obj-attribute name="created" type="java.util.Date" db-attribute-path="Created"/>
+		<obj-attribute name="dateFinished" type="java.util.Date" db-attribute-path="DateFinished"/>
+		<obj-attribute name="isStepFinished" type="java.lang.Boolean" db-attribute-path="IsStepFinished"/>
+		<obj-attribute name="reason" type="java.lang.String" db-attribute-path="Reason"/>
+	</obj-entity>
+	<db-relationship name="pages" source="_users" target="pages" toMany="true">
+		<db-attribute-pair source="UserID" target="CreatedByID"/>
+	</db-relationship>
+	<db-relationship name="receivedWorkflowsteps" source="_users" target="workflowsteps" toMany="true">
+		<db-attribute-pair source="UserID" target="ToUserID"/>
+	</db-relationship>
+	<db-relationship name="sentWorkflowsteps" source="_users" target="workflowsteps" toMany="true">
+		<db-attribute-pair source="UserID" target="FromUserID"/>
+	</db-relationship>
+	<db-relationship name="workflowcomments" source="_users" target="workflowcomments" toMany="true">
+		<db-attribute-pair source="UserID" target="UserID"/>
+	</db-relationship>
+	<db-relationship name="documentvalues" source="documents" target="documentvalues" toMany="true">
+		<db-attribute-pair source="DocumentID" target="DocumentID"/>
+	</db-relationship>
+	<db-relationship name="pages" source="documents" target="pages" toMany="true">
+		<db-attribute-pair source="DocumentID" target="DocumentID"/>
+	</db-relationship>
+	<db-relationship name="project" source="documents" target="projects" toMany="false">
+		<db-attribute-pair source="ProjectID" target="ProjectID"/>
+	</db-relationship>
+	<db-relationship name="workflowcomments" source="documents" target="workflowcomments" toMany="true">
+		<db-attribute-pair source="DocumentID" target="DocumentID"/>
+	</db-relationship>
+	<db-relationship name="workflows" source="documents" target="workflows" toMany="true">
+		<db-attribute-pair source="DocumentID" target="DocumentID"/>
+	</db-relationship>
+	<db-relationship name="workflowsteps" source="documents" target="workflowsteps" toMany="true">
+		<db-attribute-pair source="DocumentID" target="DocumentID"/>
+	</db-relationship>
+	<db-relationship name="document" source="documentvalues" target="documents" toMany="false">
+		<db-attribute-pair source="DocumentID" target="DocumentID"/>
+	</db-relationship>
+	<db-relationship name="project" source="documentvalues" target="projects" toMany="false">
+		<db-attribute-pair source="ProjectID" target="ProjectID"/>
+	</db-relationship>
+	<db-relationship name="projectfield" source="documentvalues" target="projectfields" toMany="false">
+		<db-attribute-pair source="FieldID" target="FieldID"/>
+	</db-relationship>
+	<db-relationship name="document" source="pages" target="documents" toMany="false">
+		<db-attribute-pair source="DocumentID" target="DocumentID"/>
+	</db-relationship>
+	<db-relationship name="project" source="pages" target="projects" toMany="false">
+		<db-attribute-pair source="ProjectID" target="ProjectID"/>
+	</db-relationship>
+	<db-relationship name="users" source="pages" target="_users" toMany="false">
+		<db-attribute-pair source="CreatedByID" target="UserID"/>
+	</db-relationship>
+	<db-relationship name="documentvalues" source="projectfields" target="documentvalues" toMany="true">
+		<db-attribute-pair source="FieldID" target="FieldID"/>
+	</db-relationship>
+	<db-relationship name="project" source="projectfields" target="projects" toMany="false">
+		<db-attribute-pair source="ProjectID" target="ProjectID"/>
+	</db-relationship>
+	<db-relationship name="documents" source="projects" target="documents" toMany="true">
+		<db-attribute-pair source="ProjectID" target="ProjectID"/>
+	</db-relationship>
+	<db-relationship name="documentvalues" source="projects" target="documentvalues" toMany="true">
+		<db-attribute-pair source="ProjectID" target="ProjectID"/>
+	</db-relationship>
+	<db-relationship name="pages" source="projects" target="pages" toMany="true">
+		<db-attribute-pair source="ProjectID" target="ProjectID"/>
+	</db-relationship>
+	<db-relationship name="projectfields" source="projects" target="projectfields" toMany="true">
+		<db-attribute-pair source="ProjectID" target="ProjectID"/>
+	</db-relationship>
+	<db-relationship name="workflowcomments" source="projects" target="workflowcomments" toMany="true">
+		<db-attribute-pair source="ProjectID" target="ProjectID"/>
+	</db-relationship>
+	<db-relationship name="workflowreasons" source="projects" target="workflowreasons" toMany="true">
+		<db-attribute-pair source="ProjectID" target="ProjectID"/>
+	</db-relationship>
+	<db-relationship name="workflows" source="projects" target="workflows" toMany="true">
+		<db-attribute-pair source="ProjectID" target="ProjectID"/>
+	</db-relationship>
+	<db-relationship name="workflowsteps" source="projects" target="workflowsteps" toMany="true">
+		<db-attribute-pair source="ProjectID" target="ProjectID"/>
+	</db-relationship>
+	<db-relationship name="document" source="workflowcomments" target="documents" toMany="false">
+		<db-attribute-pair source="DocumentID" target="DocumentID"/>
+	</db-relationship>
+	<db-relationship name="project" source="workflowcomments" target="projects" toMany="false">
+		<db-attribute-pair source="ProjectID" target="ProjectID"/>
+	</db-relationship>
+	<db-relationship name="user" source="workflowcomments" target="_users" toMany="false">
+		<db-attribute-pair source="UserID" target="UserID"/>
+	</db-relationship>
+	<db-relationship name="workflow" source="workflowcomments" target="workflows" toMany="false">
+		<db-attribute-pair source="WorkflowID" target="WorkflowID"/>
+	</db-relationship>
+	<db-relationship name="workflowstep" source="workflowcomments" target="workflowsteps" toMany="false">
+		<db-attribute-pair source="StepID" target="StepID"/>
+	</db-relationship>
+	<db-relationship name="project" source="workflowreasons" target="projects" toMany="false">
+		<db-attribute-pair source="ProjectID" target="ProjectID"/>
+	</db-relationship>
+	<db-relationship name="document" source="workflows" target="documents" toMany="false">
+		<db-attribute-pair source="DocumentID" target="DocumentID"/>
+	</db-relationship>
+	<db-relationship name="project" source="workflows" target="projects" toMany="false">
+		<db-attribute-pair source="ProjectID" target="ProjectID"/>
+	</db-relationship>
+	<db-relationship name="workflowcomments" source="workflows" target="workflowcomments" toMany="true">
+		<db-attribute-pair source="WorkflowID" target="WorkflowID"/>
+	</db-relationship>
+	<db-relationship name="workflowsteps" source="workflows" target="workflowsteps" toMany="true">
+		<db-attribute-pair source="WorkflowID" target="WorkflowID"/>
+	</db-relationship>
+	<db-relationship name="document" source="workflowsteps" target="documents" toMany="false">
+		<db-attribute-pair source="DocumentID" target="DocumentID"/>
+	</db-relationship>
+	<db-relationship name="fromUser" source="workflowsteps" target="_users" toMany="false">
+		<db-attribute-pair source="FromUserID" target="UserID"/>
+	</db-relationship>
+	<db-relationship name="projects" source="workflowsteps" target="projects" toMany="false">
+		<db-attribute-pair source="ProjectID" target="ProjectID"/>
+	</db-relationship>
+	<db-relationship name="toUser" source="workflowsteps" target="_users" toMany="false">
+		<db-attribute-pair source="ToUserID" target="UserID"/>
+	</db-relationship>
+	<db-relationship name="workflow" source="workflowsteps" target="workflows" toMany="false">
+		<db-attribute-pair source="WorkflowID" target="WorkflowID"/>
+	</db-relationship>
+	<db-relationship name="workflowcomment" source="workflowsteps" target="workflowcomments" toMany="true">
+		<db-attribute-pair source="StepID" target="StepID"/>
+	</db-relationship>
+	<obj-relationship name="documentvalues" source="Document" target="Documentvalue" db-relationship-path="documentvalues"/>
+	<obj-relationship name="pages" source="Document" target="Page" db-relationship-path="pages"/>
+	<obj-relationship name="project" source="Document" target="Project" db-relationship-path="project"/>
+	<obj-relationship name="workflowcomments" source="Document" target="Workflowcomment" db-relationship-path="workflowcomments"/>
+	<obj-relationship name="workflows" source="Document" target="Workflow" db-relationship-path="workflows"/>
+	<obj-relationship name="workflowsteps" source="Document" target="Workflowstep" db-relationship-path="workflowsteps"/>
+	<obj-relationship name="document" source="Documentvalue" target="Document" db-relationship-path="document"/>
+	<obj-relationship name="project" source="Documentvalue" target="Project" db-relationship-path="project"/>
+	<obj-relationship name="projectfield" source="Documentvalue" target="Projectfield" db-relationship-path="projectfield"/>
+	<obj-relationship name="document" source="Page" target="Document" db-relationship-path="document"/>
+	<obj-relationship name="project" source="Page" target="Project" db-relationship-path="project"/>
+	<obj-relationship name="users" source="Page" target="User" db-relationship-path="users"/>
+	<obj-relationship name="documents" source="Project" target="Document" db-relationship-path="documents"/>
+	<obj-relationship name="documentvalues" source="Project" target="Documentvalue" db-relationship-path="documentvalues"/>
+	<obj-relationship name="pages" source="Project" target="Page" db-relationship-path="pages"/>
+	<obj-relationship name="workflowcomments" source="Project" target="Workflowcomment" db-relationship-path="workflowcomments"/>
+	<obj-relationship name="workflowreasons" source="Project" target="Workflowreason" db-relationship-path="workflowreasons"/>
+	<obj-relationship name="workflows" source="Project" target="Workflow" db-relationship-path="workflows"/>
+	<obj-relationship name="workflowsteps" source="Project" target="Workflowstep" db-relationship-path="workflowsteps"/>
+	<obj-relationship name="documentvalues" source="Projectfield" target="Documentvalue" db-relationship-path="documentvalues"/>
+	<obj-relationship name="project" source="Projectfield" target="Project" db-relationship-path="project"/>
+	<obj-relationship name="pages" source="User" target="Page" db-relationship-path="pages"/>
+	<obj-relationship name="receivedWorkflowsteps" source="User" target="Workflowstep" db-relationship-path="receivedWorkflowsteps"/>
+	<obj-relationship name="sentWorkflowsteps" source="User" target="Workflowstep" db-relationship-path="sentWorkflowsteps"/>
+	<obj-relationship name="workflowcomments" source="User" target="Workflowcomment" db-relationship-path="workflowcomments"/>
+	<obj-relationship name="document" source="Workflow" target="Document" db-relationship-path="document"/>
+	<obj-relationship name="project" source="Workflow" target="Project" db-relationship-path="project"/>
+	<obj-relationship name="workflowcomments" source="Workflow" target="Workflowcomment" db-relationship-path="workflowcomments"/>
+	<obj-relationship name="workflowsteps" source="Workflow" target="Workflowstep" db-relationship-path="workflowsteps"/>
+	<obj-relationship name="document" source="Workflowcomment" target="Document" db-relationship-path="document"/>
+	<obj-relationship name="project" source="Workflowcomment" target="Project" db-relationship-path="project"/>
+	<obj-relationship name="user" source="Workflowcomment" target="User" db-relationship-path="user"/>
+	<obj-relationship name="workflow" source="Workflowcomment" target="Workflow" db-relationship-path="workflow"/>
+	<obj-relationship name="workflowstep" source="Workflowcomment" target="Workflowstep" db-relationship-path="workflowstep"/>
+	<obj-relationship name="project" source="Workflowreason" target="Project" db-relationship-path="project"/>
+	<obj-relationship name="document" source="Workflowstep" target="Document" db-relationship-path="document"/>
+	<obj-relationship name="fromUser" source="Workflowstep" target="User" db-relationship-path="fromUser"/>
+	<obj-relationship name="projects" source="Workflowstep" target="Project" db-relationship-path="projects"/>
+	<obj-relationship name="toUser" source="Workflowstep" target="User" db-relationship-path="toUser"/>
+	<obj-relationship name="workflow" source="Workflowstep" target="Workflow" db-relationship-path="workflow"/>
+	<obj-relationship name="workflowcomment" source="Workflowstep" target="Workflowcomment" db-relationship-path="workflowcomment"/>
+</data-map>

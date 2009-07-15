@@ -1,0 +1,76 @@
+<html>
+<head>
+<link rel="stylesheet" href="../stylesheets/v2.css" TYPE="text/css">
+<link rel="stylesheet" href="../stylesheets/fontSize.jsp" type="text/css">
+<script language="javascript" src="../utils/verify.js"></script>
+<head>
+
+<body>
+<form name="company" method="post" action="processCompany.jsp" onSubmit="return checkForm(this);">
+<font size="+1">New Company</font><hr>
+<a href="reviewCompanies.jsp">Companies</a> &gt; New Company
+<hr>
+<table>
+<tr>
+	<td class="lbl">Company Name:</td>
+	<td><input type="text"  name="name"></td>
+	<td class="lbl">Web Site:</td>
+    <td ><input type="text" name="website"></td>
+</tr>
+<tr>
+	<td class="lbl">Description:</td>
+    <td><input type="text"  name="description"></td>
+ 	<td class="lbl">Phone:</td>
+    <td ><input type="text"  name="phone" maxlength="16"></td>
+</tr>
+<tr>
+	<td class="lbl">Address:</td>
+    <td ><input type="text"  name="address" maxlength="100"></td>
+ 	<td class="lbl">Fax:</td>
+    <td ><input type="text"  name="fax" maxlength="16"></td>
+</tr>
+<tr>
+	<td class="lbl">City:</td>
+    <td ><input type="text"  name="city"></td>
+	<td class="lbl">License Number:</td>
+    <td ><input type="text"  name="licenseno"></td>
+</tr>
+<tr>
+	<td class="lbl">State:</td>
+    <td ><input type="text"  name="state"></td>
+    	<td class="lbl">Federal ID:</td>
+    <td ><input type="text"  name="federal_id"></td>
+</tr>
+<tr>
+	<td class="lbl">Zip Code:</td>
+    <td ><input type="text"  name="zip" maxlength="10" ></td>
+   	<td class="lbl">Safety Manual:</td>
+	<td><input type="checkbox" name="safety" value="y"></td>
+</tr>
+<tr>
+	<td>&nbsp;</td>
+	<td><input type="submit" value="Save"></td>
+</tr>
+</table>
+</form>
+<script language="javascript">
+	var m = document.company;
+	var f = m.name;
+	f.required = true;
+	f.eName = "Company Name";
+	f.focus();
+	
+	f = m.zip;
+	f.isZip = true;
+	f.eName = "Zip Code";
+	
+	f = m.phone;
+	f.isPhone = true;
+	f.eName = "Phone";
+	
+	f = m.fax;
+	f.isPhone = true;
+	f.eName = "Fax";
+</script>
+</body>
+</html>

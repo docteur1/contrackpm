@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp_ID" version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+	<display-name>CEWS</display-name>
+	<resource-ref>
+		<description>DB Connection mysql</description>
+		<res-ref-name>jdbc/kf</res-ref-name>
+		<res-type>javax.sql.DataSource</res-type>
+		<res-auth>Container</res-auth>
+		<res-sharing-scope>Shareable</res-sharing-scope>
+	</resource-ref>
+	<servlet>
+	    <servlet-name>cayenne-service</servlet-name>
+	    <servlet-class>org.apache.cayenne.remote.hessian.service.HessianServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	    <servlet-name>cayenne-service</servlet-name>
+	    <url-pattern>/cayenne-service</url-pattern>
+	</servlet-mapping>
+<!--
+	<servlet>
+	    <servlet-name>hessian-service</servlet-name>
+	    <servlet-class>com.caucho.hessian.server.HessianServlet</servlet-class>
+	    <init-param>
+	      <param-name>home-class</param-name>
+	      <param-value>accounting.ce.CEHessianImpl</param-value>
+	    </init-param>
+	    <init-param>
+	      <param-name>home-api</param-name>
+	      <param-value>accounting.ce.CEHessian</param-value>
+	    </init-param>
+	</servlet>
+-->
+	<servlet>
+	    <servlet-name>hessian-service</servlet-name>
+	    <servlet-class>accounting.ce.CEHessianImpl</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	    <servlet-name>hessian-service</servlet-name>
+	    <url-pattern>/hessian-service</url-pattern>
+	</servlet-mapping>
+	<session-config>
+	   <session-timeout>10</session-timeout>
+	</session-config>
+	<security-role>
+		<role-name>account</role-name>
+	</security-role>
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>Protected</web-resource-name>
+			<url-pattern>/*</url-pattern>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>account</role-name>
+		</auth-constraint>
+	</security-constraint>
+	<login-config>
+		<auth-method>BASIC</auth-method>
+		<realm-name>Protected Web Services</realm-name>
+	</login-config>
+	<listener>
+		<listener-class>com.sinkluge.ContextListener</listener-class>
+	</listener>
+</web-app>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<domains project-version="3.0">
+<domain name="CE">
+	<property name="cayenne.DataRowStore.snapshot.size" value="10000"/>
+
+	<map name="CEMap" location="CEMap.map.xml"/>
+
+	<node name="CENode"
+		 datasource="odbc/ce"
+		 adapter="accounting.ce.CEAdapter"
+		 factory="org.apache.cayenne.conf.JNDIDataSourceFactory">
+			<map-ref name="CEMap"/>
+	 </node>
+</domain>
+</domains>

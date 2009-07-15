@@ -1,0 +1,82 @@
+body, td, button, a, a:visited, a:hover, input  { 
+	font-family: Arial, sans-serif; 
+	font-size: 8pt; 
+}
+body {
+	margin-top: 0;
+	margin-right: 0;
+	margin-bottom: 0;
+	margin-left: 0;
+}
+table {
+	border-collapse: collapse;
+	padding: 0;
+}
+a, a:visited, a:hover {
+	text-decoration: none;
+}
+a, a:visited {
+	color: mediumblue;
+}
+a:hover {
+	color: red;
+}
+td {
+	border: 1px solid black;
+	padding-left: 3px;
+	padding-right: 3px;
+}
+td.w10 {
+	width: 23px;
+}
+td.w130 {
+	width: 130px;
+}
+td.w80 {
+	width: 80px;
+}
+td.w72 {
+	width: 72px;
+}
+td.w30 {
+	width: 30px;
+}
+td.w150 {
+	width: 150px;
+}
+td.w190 {
+	width: 190px;
+}
+td.w300 {
+	width: 300px;
+}
+td.w50 {
+	width: 50px;
+}
+td.c {
+	text-align: center;
+}
+td.r {
+	text-align: right;
+}
+td.g {
+	background-color: #E1DED9;
+}
+.p12 {
+	font-size: 12pt;
+}
+.yellow {
+	background-color: #FFFFCC;
+}
+.red, button {
+	background-color: #FFA07A;
+}
+button {
+	border-style: solid;
+	border-width: 1;
+	border-color: gray;
+	padding: 0;
+}
+.blue {
+	background-color: #87CEFA;
+}
