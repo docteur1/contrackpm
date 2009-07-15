@@ -1,6 +1,4 @@
-#summary Installation instructions
 #labels Featured,Phase-Deploy
-
 = Download Files =
 
 Download the following files:
@@ -29,8 +27,3 @@ Check the server logs (again this depends on your tomcat install) for errors. If
  * User: root
  * Password: password
 If all went well you should be able to click on the "Main" menu and select "Administration" at this point you can change the root password (*recommended*) or setup new users and change settings.
-
-
-= Help =
-
-Contact the project developer. (More documentation to come)!
