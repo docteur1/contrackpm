@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp_ID" version="2.4"
+        xmlns="http://java.sun.com/xml/ns/j2ee"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+        <display-name>Contrack - Project Management</display-name>
+        <resource-ref>
+                <description>DB Connection mysql</description>
+                <res-ref-name>jdbc/contrack</res-ref-name>
+                <res-type>javax.sql.DataSource</res-type>
+                <res-auth>Container</res-auth>
+                <res-sharing-scope>Shareable</res-sharing-scope>
+        </resource-ref>
+        <distributable/>
+        <security-role>
+                <role-name>Users</role-name>
+        </security-role>
+        
+        <security-constraint>
+                <web-resource-collection>
+                        <web-resource-name>Contrack</web-resource-name>
+                        <url-pattern>/jsp/*</url-pattern>
+                        <url-pattern>/JSON-RPC</url-pattern>
+                        <http-method>GET</http-method>
+                        <http-method>POST</http-method>
+                </web-resource-collection>
+                <auth-constraint>
+                        <role-name>Users</role-name>
+                </auth-constraint>
+        </security-constraint>
+
+        <login-config>
+                <auth-method>FORM</auth-method>
+                <realm-name>Contrack</realm-name>
+                <form-login-config>
+                        <form-login-page>/login.jsp</form-login-page>
+                        <form-error-page>/error.jsp</form-error-page>
+                </form-login-config>
+        </login-config>
+       
+        <session-config>
+           <session-timeout>5</session-timeout>
+        </session-config>
+        <servlet>
+                <servlet-name>ReportServlet</servlet-name>
+                <servlet-class>com.sinkluge.servlets.PDFReport</servlet-class>
+        </servlet>
+
+        <servlet-mapping>
+                <servlet-name>ReportServlet</servlet-name>
+                <url-pattern>/jsp/servlets/reports/*</url-pattern>
+        </servlet-mapping>
+
+        <servlet>
+                <servlet-name>VCardServlet</servlet-name>
+                <servlet-class>com.sinkluge.servlets.VCardServlet</servlet-class>
+        </servlet>
+
+        <servlet-mapping>
+                <servlet-name>VCardServlet</servlet-name>
+                <url-pattern>/jsp/servlets/vCard/*</url-pattern>
+        </servlet-mapping>
+
+        <servlet>
+                <servlet-name>CSVExportServlet</servlet-name>
+                <servlet-class>com.sinkluge.servlets.CSV</servlet-class>
+        </servlet>
+
+        <servlet-mapping>
+                <servlet-name>CSVExportServlet</servlet-name>
+                <url-pattern>/jsp/servlets/CSV/*</url-pattern>
+        </servlet-mapping>
+       
+                <servlet>
+                <servlet-name>UserPhotoServlet</servlet-name>
+                <servlet-class>com.sinkluge.servlets.UserPhoto</servlet-class>
+        </servlet>
+
+        <servlet-mapping>
+                <servlet-name>UserPhotoServlet</servlet-name>
+                <url-pattern>/jsp/servlets/userphoto/*</url-pattern>
+        </servlet-mapping>
+       
+        <servlet>
+                <servlet-name>ImageServlet</servlet-name>
+                <servlet-class>com.sinkluge.servlets.ImageServlet</servlet-class>
+        </servlet>
+
+        <servlet-mapping>
+                <servlet-name>ImageServlet</servlet-name>
+                <url-pattern>/jsp/servlets/images/*</url-pattern>
+        </servlet-mapping>
+        <servlet>
+                <servlet-name>FileServlet</servlet-name>
+                <servlet-class>com.sinkluge.servlets.FileServlet</servlet-class>
+        </servlet>
+
+        <servlet-mapping>
+                <servlet-name>FileServlet</servlet-name>
+                <url-pattern>/jsp/servlets/files/*</url-pattern>
+        </servlet-mapping>
+       
+        <servlet>
+                <servlet-name>CloseoutServlet</servlet-name>
+                <servlet-class>com.sinkluge.servlets.Closeout</servlet-class>
+        </servlet>
+
+        <servlet-mapping>
+                <servlet-name>CloseoutServlet</servlet-name>
+                <url-pattern>/jsp/servlets/closeout/*</url-pattern>
+        </servlet-mapping>
+       
+        <servlet>
+                <servlet-name>LettersServlet</servlet-name>
+                <servlet-class>com.sinkluge.servlets.Letters</servlet-class>
+        </servlet>
+
+        <servlet-mapping>
+                <servlet-name>LettersServlet</servlet-name>
+                <url-pattern>/jsp/servlets/letters/*</url-pattern>
+        </servlet-mapping>
+<!--
+        Maybe someday when computer ease isn't lame anymore
+        <servlet>
+                <servlet-name>AccountingImage</servlet-name>
+                <servlet-class>com.sinkluge.servlets.AccountingImage</servlet-class>
+        </servlet>
+
+        <servlet-mapping>
+                <servlet-name>AccountingImage</servlet-name>
+                <url-pattern>/image.pdf</url-pattern>
+        </servlet-mapping>
+-->
+        <servlet>
+        	<servlet-name>org.jabsorb.JSONRPCServlet</servlet-name>
+        	<servlet-class>org.jabsorb.JSONRPCServlet</servlet-class>
+        	<init-param>
+                 <param-name>gzip_threshold</param-name>
+                 <param-value>-1</param-value>
+        	</init-param>
+        </servlet>
+        <servlet-mapping>
+        <servlet-name>org.jabsorb.JSONRPCServlet</servlet-name>
+        <url-pattern>/jsp/JSON-RPC</url-pattern>
+        </servlet-mapping>
+        <servlet-mapping>
+        <servlet-name>org.jabsorb.JSONRPCServlet</servlet-name>
+        <url-pattern>/JSON-RPC</url-pattern>
+        </servlet-mapping>
+<!--
+        <servlet>
+        <servlet-name>JSONTEST</servlet-name>
+        <servlet-class>com.sinkluge.servlets.JSONRPCServlet</servlet-class>
+        <init-param>
+                 <param-name>gzip_threshold</param-name>
+                 <param-value>200</param-value>
+                </init-param>
+        </servlet>
+        <servlet-mapping>
+        <servlet-name>JSONTEST</servlet-name>
+        <url-pattern>/TEST</url-pattern>
+        </servlet-mapping>
+-->
+        <servlet>
+                <servlet-name>LogoServlet</servlet-name>
+                <servlet-class>com.sinkluge.servlets.Logo</servlet-class>
+        </servlet>      
+       
+        <servlet-mapping>
+                <servlet-name>LogoServlet</servlet-name>
+                <url-pattern>/jsp/servlets/logo/*</url-pattern>
+        </servlet-mapping>
+       
+        <servlet>
+                <servlet-name>FileUploadServlet</servlet-name>
+                <servlet-class>com.sinkluge.servlets.FileUpload</servlet-class>
+        </servlet>
+        <servlet>
+                <servlet-name>ErrorServlet</servlet-name>
+                <servlet-class>
+                com.sinkluge.servlets.ErrorServlet</servlet-class>
+        </servlet>      
+        <servlet-mapping>
+                <servlet-name>ErrorServlet</servlet-name>
+                <url-pattern>/jsp/servlets/error/*</url-pattern>
+        </servlet-mapping>
+       
+        <servlet-mapping>
+                <servlet-name>FileUploadServlet</servlet-name>
+                <url-pattern>/jsp/servlets/fileUpload/*</url-pattern>
+        </servlet-mapping>
+        <filter>
+                <description>
+                </description>
+                <display-name>
+                Access</display-name>
+                <filter-name>Access</filter-name>
+                <filter-class>com.sinkluge.JSON.Access</filter-class>
+        </filter>
+        <filter-mapping>
+                <filter-name>Access</filter-name>
+                <url-pattern>/jsp/*</url-pattern>
+        </filter-mapping>
+
+
+        <listener>
+                <listener-class>com.sinkluge.SessionListener</listener-class>
+         </listener>    
+        <listener>
+                <listener-class>com.sinkluge.ContextListener</listener-class>
+        </listener>
+        <error-page>
+                <error-code>500</error-code>
+                <location>/jsp/error.jsp</location>
+        </error-page>
+</web-app>

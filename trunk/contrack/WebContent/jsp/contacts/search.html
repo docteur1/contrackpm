@@ -1,0 +1,30 @@
+<html>
+	<head>
+			<link rel=stylesheet href="../stylesheets/v2.css" type="text/css">
+			<link rel="stylesheet" href="../stylesheets/fontSize.jsp" type="text/css">
+	</head>
+<body>
+<form action="reviewCompanies.jsp" method="GET">
+<div class="title">Search for Company or Contact</div><hr>
+<table>
+	<tr>
+		<td class="lbl">Search:</td>
+		<td><input id="searchBox" type="text" name="search"></td>
+		<td class="lbl">Search by:</td>
+		<td><select name="type">
+			<option value="cost_code">Code</option>	
+			<option value="company_name" selected>Company Name</option>
+			<option value="name">Contact Name</option>
+			<option value="email">Email</option>
+			<option value="code_description">Work Description</option>
+			</select>
+		</td>
+		<td><input type="submit" value="Search"></td>
+	</tr>
+</table>
+</form>
+<script>
+	document.getElementById("searchBox").focus();
+</script>
+</body>
+</html>

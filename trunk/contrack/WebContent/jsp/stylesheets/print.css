@@ -1,0 +1,35 @@
+table {
+	border-collapse: collapse;
+	padding: 0;
+}
+td, a {
+	font-size: smaller;
+}
+a {
+	text-decoration: none;
+}
+td {
+	border: 1px solid black;
+	padding-left: 3px;
+	padding-right: 3px;
+}
+td.head, div.title, .bold {
+	font-weight: bold;
+}
+div.title {
+	font-size: 150%;
+}
+td.aright {
+	text-align: right;
+}
+td.acenter {
+	text-align: center;
+}
+div.link {
+	color: mediumblue;
+	cursor: pointer;
+	display: inline;
+}
+div.link:hover {
+	color: red;
+}

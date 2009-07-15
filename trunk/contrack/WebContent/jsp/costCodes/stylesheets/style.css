@@ -1,0 +1,63 @@
+input, body, td, select, button, a, a:visited, a:hover  { 
+	font-family: Arial, sans-serif; 
+	font-size: 8pt; 
+}
+body {
+	margin-top: 0;
+	margin-right: 0;
+	margin-bottom: 0;
+	margin-left: 0;
+}
+table {
+	border-collapse: collapse;
+	padding: 0;
+}
+a, a:visited, a:hover {
+	text-decoration: none;
+}
+a, a:visited {
+	color: mediumblue;
+}
+a:hover {
+	color: red;
+}
+td {
+	border: 1px solid black;
+	padding-left: 3px;
+	padding-right: 3px;
+	white-space: nowrap;
+}
+.r35 {
+	text-align: right;
+	width: 35px;
+}
+.rg60 {
+	text-align: right;
+	width: 60px;
+	background-color: #E1DED9;
+}
+.r60 {
+	text-align: right;
+	width: 60px;
+}
+.l130 {
+	width: 126px;
+}
+.r13 {
+	width: 6px;
+	text-align: right;
+}
+.yellow {
+	background-color: #FFFFCC;
+}
+.blue {
+	background-color: #87CEFA;
+}
+div.clip {
+	width: 123px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow-x: hidden;
+	cursor: pointer;
+}
+

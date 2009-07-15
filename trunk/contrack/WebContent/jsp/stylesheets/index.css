@@ -1,0 +1,25 @@
+div.menuHead, div.menuBody {
+	background-color: #DCDCDC;
+	border: 1px solid gray;
+	cursor: pointer;
+}
+div.menuHead {
+	display: inline;
+	padding: 2px;
+	margin-left: 3px;
+}
+div.menuBody {
+	padding: 0px;
+	display: none;
+	z-index: 50;
+	position: absolute;
+}
+div.menuHead:hover, div.menuItem:hover {
+	background-color: #FFFFCC;
+}
+div.menuItem {
+	padding: 2px;
+}
+div.menuHidden {
+	display: none;
+}

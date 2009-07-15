@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp_ID" version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+	<display-name>KFWS</display-name>
+	<resource-ref>
+		<description>DB Connection mysql</description>
+		<res-ref-name>jdbc/kf</res-ref-name>
+		<res-type>javax.sql.DataSource</res-type>
+		<res-auth>Container</res-auth>
+		<res-sharing-scope>Shareable</res-sharing-scope>
+	</resource-ref>
+	<session-config>
+	   <session-timeout>10</session-timeout>
+	</session-config>
+	<security-role>
+		<role-name>kfws</role-name>
+	</security-role>
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>Protected</web-resource-name>
+			<url-pattern>/*</url-pattern>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>kfws</role-name>
+		</auth-constraint>
+	</security-constraint>
+	<login-config>
+		<auth-method>BASIC</auth-method>
+		<realm-name>Protected Web Services</realm-name>
+	</login-config>
+	<servlet>
+	    <servlet-name>cayenne-service</servlet-name>
+	    <servlet-class>org.apache.cayenne.remote.hessian.service.HessianServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	    <servlet-name>cayenne-service</servlet-name>
+	    <url-pattern>/cayenne-service</url-pattern>
+	</servlet-mapping>
+	<servlet>
+	    <servlet-name>document-service</servlet-name>
+	    <servlet-class>kf.service.DocumentService</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	    <servlet-name>document-service</servlet-name>
+	    <url-pattern>/document-service</url-pattern>
+	</servlet-mapping>
+	<filter>
+		<filter-name>CayenneFilter</filter-name>
+		<filter-class>
+			org.apache.cayenne.conf.WebApplicationContextFilter
+		</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>CayenneFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<listener>
+		<listener-class>com.sinkluge.ContextListener</listener-class>
+	</listener>
+</web-app>

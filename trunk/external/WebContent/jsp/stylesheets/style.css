@@ -1,0 +1,82 @@
+* { 
+	font-family: Arial, sans-serif;
+}
+a, a:visited, a:link {
+	color: mediumblue;
+	text-decoration: none;
+}
+a:hover {
+	color: red;
+}
+body {
+	margin-top: 0;
+	margin-right: 0;
+	margin-bottom: 0;
+	margin-left: 0;
+}
+.menu {
+	width: 85px;
+	color: white;
+	background-color: black;
+	height: 24px;
+	border-color: gray;
+	font-weight: bold;
+}
+.lbl {
+	font-weight: bold;
+	text-align: right;
+	white-space: nowrap;
+}
+.bold, legend {
+	font-weight: bold;
+}
+td.lbl {
+	font-weight: bold;
+	text-align: right;
+}
+td.it, td.left, td.right, td.head, td.input {
+	border-bottom: 1px solid gray;
+}
+td.left {
+	border-left: 1px solid gray;
+}
+td.right {
+	border-right: 1px solid gray;
+}
+td.aright {
+	text-align: right;
+}
+td.acenter {
+	text-align: center;
+}
+td.head {
+	font-weight: bold;
+	border-top: 1px solid gray;
+}
+td.input {
+	text-align: center;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+.gray {
+	background-color: #DCDCDC;
+}
+.yellow, td.head {
+	background-color: #FFFFCC;
+}
+.white {
+	background-color: white;
+}
+div.link {
+	color: mediumblue;
+	cursor: pointer;
+}
+div.link:hover, a:hover, .red {
+	color: red;
+}
+div.clip {
+	width: 150px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow-x: hidden;
+}
