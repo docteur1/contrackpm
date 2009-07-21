@@ -6,7 +6,7 @@ Download the following files:
  * `context-sample.xml`
  * `contrack.sql`
 
-Download and install Tomcat 6 a, a J2SE 5, and MySQL 5.
+Download and install Tomcat 6, a J2SE 5 (or 6 should work but has not been tested), and MySQL 5 (only tested on 5 but not 5.1).
 
 == Database ==
 
