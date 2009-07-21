@@ -8,7 +8,7 @@ Download the following files:
 
 Download and install Tomcat 6 a, a J2SE 5, and MySQL 5.
 
-== Database =+
+== Database ==
 
  # Create a database in MySQL and assign a MySQL user appropriate rights.
  # Load the database skeleton file `contrack.sql` using the following command `mysql -u username -p password databasename < contrack.sql`. MySQL will print any error messages. It will print none if the command is successful.
