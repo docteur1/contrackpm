@@ -15,7 +15,7 @@ Download and install Tomcat 6, a J2SE 5 (or 6 should work but has not been teste
 
 == Configure the Web Application ==
 
- # Rename `context-sample.xml` to `contrack.xml` (or whatever context path your web application will have relative to the tomcat root) and place in your Tomcat installation's `conf` directory/folder.
+ # Rename `context-sample.xml` to `contrack.xml` (or whatever context path your web application will have relative to the tomcat root) and place in a folder in your tomcat `conf` directory. (See http://tomcat.apache.org/tomcat-6.0-doc/config/host.html#Standard%20Implementation).
  # Open the file and change the settings according to http://tomcat.apache.org/tomcat-6.0-doc/jndi-datasource-examples-howto.html and http://tomcat.apache.org/tomcat-6.0-doc/realm-howto.html. *Note:* if you are using integrated authentication (SQL) you should only have to update the `<Resource>` tag with your database information.
  # _Active Directory Integration Only_: See http://www.jspwiki.org/wiki/ActiveDirectoryIntegration and the comments in `context-sample.xml` on how to setup integration (or contact the development team).
  # Download and copy latest stable MySQL JDBC driver and make it available to your server's `lib` directory (this varies great among OSes and flavors of Tomcat so see http://tomcat.apache.org/tomcat-6.0-doc/class-loader-howto.html.
