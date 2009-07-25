@@ -42,6 +42,7 @@ public class SQLUser extends UserData {
 				Verify v = new Verify();
 				if (v.password(newPass, null)) {
 					rs.updateString("password", Digest.digest(newPass));
+					rs.updateRow();
 				} else result = v.message;
 			} else result = "Old password does not match";
 		} else result = "User not found";

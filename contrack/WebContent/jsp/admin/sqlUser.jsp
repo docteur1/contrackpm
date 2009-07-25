@@ -42,7 +42,7 @@ if (username != null) {
 	if (!active) db.dbInsert("delete from user_roles where username = '" + username
 		+ "' and role_name = 'Users'");
 	else db.dbInsert("insert ignore into user_roles (username, role_name) values ('"
-			+ username + "', 'Users')");
+			+ username + "', 'Contrack Users')");
 	String[] roles = request.getParameterValues("groups");
 	db.dbInsert("delete from user_roles where username = '" + username + "' and role_name != 'Users'");
 	for (String role : roles) db.dbInsert("insert into user_roles (username, role_name) values "

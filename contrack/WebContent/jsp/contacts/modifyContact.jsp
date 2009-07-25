@@ -88,7 +88,7 @@ if(rs.next()){
 <tr>
 	<td class="lbl">City:</td>
 	<td><input type="text" size="20" name="city" value="<%=city%>"></td>
-	<td class="lbl"><%= Widgets.phone(mobile, "Mobile:", , rs.getString("name"), request) %></td>
+	<td class="lbl"><%= Widgets.phone(mobile, "Mobile:", rs.getString("name"), request) %></td>
 	<td><input type="text" size="20" name="mobile_phone" value="<%=mobile%>" maxlength="16"></td>
 </tr>
 <tr>
