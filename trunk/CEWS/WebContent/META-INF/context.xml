@@ -1,0 +1,16 @@
+<Context path="/accounting" override="true" antiJARLocking="true">
+	<Resource name="odbc/ce" auth="Container" type="javax.sql.DataSource"
+		maxActive="3" maxIdle="0" maxWait="10000"
+		username="CONTRACK" driverClassName="sun.jdbc.odbc.JdbcOdbcDriver"
+		password="9asTe@7f"
+		url="jdbc:odbc:Company 5"
+		/>
+		<!-- 
+		password="9asTe@7f"
+		url="jdbc:odbc:Company 5"
+		
+		password="PASSWORD"
+		url="jdbc:odbc:Company 0"
+		--> 
+
+</Context>

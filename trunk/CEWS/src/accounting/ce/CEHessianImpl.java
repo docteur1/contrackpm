@@ -502,10 +502,12 @@ public class CEHessianImpl extends HessianServlet implements CEHessian {
 		t.updateString("jobnum", code.getJobNum());
 		t.updateString("phasenum", code.getDivision());
 		t.updateString("catnum", code.getCostCode());
-		t.updateDate("date", (java.sql.Date) crd.getDate());
+		java.sql.Date date = crd.getDate() != null ? (java.sql.Date) crd.getDate() : 
+			new java.sql.Date(System.currentTimeMillis());
+		t.updateDate("date", date);
 		t.updateDouble("cost", cost);
 		t.updateDouble("hours", 0);
-		t.updateDate("dateposted", (java.sql.Date) crd.getDate());
+		t.updateDate("dateposted", date);
 		t.updateInt("glperiod", gl);
 		t.updateString("ponum", crd.getCrNum());
 		t.updateString("des1", StringUtils.left(des, 31));

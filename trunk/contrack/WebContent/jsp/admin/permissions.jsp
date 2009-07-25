@@ -127,7 +127,7 @@ if (sw) {
 	<td class="right head">Name</td>
 </tr>
 <%
-sql = "select distinct role_name from default_permissions where role_name != 'Users'"
+sql = "select distinct role_name from default_permissions where role_name != 'Contrack Users'"
 	+ " order by role_name";
 rs = db.dbQuery(sql);
 boolean color = true;
