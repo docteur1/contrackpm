@@ -1,4 +1,4 @@
-#summary Instruction to install Contrack Project Management
+#summary Instructions to install Contrack Project Management
 #labels Featured,Phase-Deploy
 == Download Files ==
 
